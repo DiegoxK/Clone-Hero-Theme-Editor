@@ -1,5 +1,12 @@
 import { relations, sql } from "drizzle-orm";
-import { index, pgTableCreator, primaryKey } from "drizzle-orm/pg-core";
+import {
+  index,
+  jsonb,
+  pgTableCreator,
+  primaryKey,
+  serial,
+  text,
+} from "drizzle-orm/pg-core";
 import { type AdapterAccount } from "next-auth/adapters";
 
 /**
@@ -9,28 +16,7 @@ import { type AdapterAccount } from "next-auth/adapters";
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = pgTableCreator(
-  (name) => `clone-her-theme-editor_${name}`,
-);
-
-export const posts = createTable(
-  "post",
-  (d) => ({
-    id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
-    name: d.varchar({ length: 256 }),
-    createdById: d
-      .varchar({ length: 255 })
-      .notNull()
-      .references(() => users.id),
-    createdAt: d
-      .timestamp({ withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: d.timestamp({ withTimezone: true }).$onUpdate(() => new Date()),
-  }),
-  (t) => [
-    index("created_by_idx").on(t.createdById),
-    index("name_idx").on(t.name),
-  ],
+  (name) => `clone-hero-theme-editor_${name}`,
 );
 
 export const users = createTable("user", (d) => ({
@@ -52,6 +38,72 @@ export const users = createTable("user", (d) => ({
 
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
+  themes: many(themes),
+  ratings: many(ratings),
+}));
+
+export const themes = createTable(
+  "theme",
+  (d) => ({
+    id: serial("id").primaryKey(),
+    name: d.varchar("name", { length: 256 }).notNull(),
+    description: text("description"),
+    colorData: jsonb("color_data").notNull(),
+    isPublic: d.boolean("is_public").default(false).notNull(),
+    authorId: d
+      .varchar("author_id", { length: 255 })
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }), // If a user is deleted, their themes are deleted.
+    createdAt: d
+      .timestamp("created_at", {
+        mode: "date",
+        withTimezone: true,
+      })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: d
+      .timestamp("updated_at", {
+        mode: "date",
+        withTimezone: true,
+      })
+      .$onUpdate(() => new Date()),
+  }),
+  (t) => [index("theme_author_id_idx").on(t.authorId)],
+);
+
+export const themesRelations = relations(themes, ({ one, many }) => ({
+  author: one(users, {
+    fields: [themes.authorId],
+    references: [users.id],
+  }),
+
+  ratings: many(ratings),
+}));
+
+export const ratings = createTable(
+  "rating",
+  (d) => ({
+    userId: d
+      .varchar("user_id", { length: 255 })
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }), // If a user is deleted, their ratings are deleted.
+    themeId: d
+      .integer("theme_id")
+      .notNull()
+      .references(() => themes.id, { onDelete: "cascade" }), // If a theme is deleted, its ratings are deleted.
+  }),
+  (t) => [primaryKey({ columns: [t.userId, t.themeId] })],
+);
+
+export const ratingsRelations = relations(ratings, ({ one }) => ({
+  user: one(users, {
+    fields: [ratings.userId],
+    references: [users.id],
+  }),
+  theme: one(themes, {
+    fields: [ratings.themeId],
+    references: [themes.id],
+  }),
 }));
 
 export const accounts = createTable(
