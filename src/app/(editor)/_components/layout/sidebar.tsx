@@ -18,7 +18,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <Tabs defaultValue="guitar" className="overflow-hidden p-4">
+      <Tabs defaultValue="guitar" className="overflow-hidden p-3">
         <TabsList className="w-full">
           <TabsTrigger value="guitar">Guitar</TabsTrigger>
           <TabsTrigger value="drums">Drums</TabsTrigger>
@@ -27,7 +27,7 @@ export default function Sidebar() {
 
         <TabsContent
           value="guitar"
-          className="overflow-x-hidden overflow-y-scroll pt-4"
+          className="overflow-x-hidden overflow-y-scroll pr-2"
         >
           <Accordion type="multiple">
             <AccordionItem value="item-1">
