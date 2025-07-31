@@ -9,7 +9,7 @@ import {
 
 export default function Sidebar() {
   return (
-    <aside className="flex w-80 flex-shrink-0 flex-col border-r">
+    <aside className="flex w-80 flex-col border-r">
       <div className="border-b p-4">
         <div className="flex gap-4">
           <h2>
@@ -18,17 +18,17 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <Tabs
-        defaultValue="guitar"
-        className="flex flex-1 flex-col overflow-hidden p-4"
-      >
-        <TabsList className="w-full flex-shrink-0">
+      <Tabs defaultValue="guitar" className="overflow-hidden p-4">
+        <TabsList className="w-full">
           <TabsTrigger value="guitar">Guitar</TabsTrigger>
           <TabsTrigger value="drums">Drums</TabsTrigger>
           <TabsTrigger value="others">Others</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="guitar" className="flex-1 overflow-y-auto pt-4">
+        <TabsContent
+          value="guitar"
+          className="overflow-x-hidden overflow-y-scroll pt-4"
+        >
           <Accordion type="multiple">
             <AccordionItem value="item-1">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -40,7 +40,7 @@ export default function Sidebar() {
               <AccordionTrigger>Is it styled?</AccordionTrigger>
               <AccordionContent>
                 Yes. It comes with default styles that match the other
-                components' aesthetic.
+                aesthetic.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
@@ -49,7 +49,17 @@ export default function Sidebar() {
                 Yes. By making the TabsContent a flex item that grows to fill
                 all available space, the overflow property now works correctly
                 on it. The long content below will now be scrollable while the
-                triggers above remain fixed.
+                triggers above remain fixed. Yes. By making the TabsContent a
+                flex item that grows to fill all available space, the overflow
+                property now works correctly on it. The long content below will
+                now be scrollable while the triggers above remain fixed. Yes. By
+                making the TabsContent a flex item that grows to fill all
+                available space, the overflow property now works correctly on
+                it. The long content below will now be scrollable while the
+                triggers above remain fixed. Yes. By making the TabsContent a
+                flex item that grows to fill all available space, the overflow
+                property now works correctly on it. The long content below will
+                now be scrollable while the triggers above remain fixed.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
