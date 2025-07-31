@@ -3,9 +3,9 @@ import Sidebar from "./_components/layout/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="flex h-screen flex-col">
       <Header />
-      <div className="grid grid-cols-[25%_auto]">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar />
         {children}
       </div>
