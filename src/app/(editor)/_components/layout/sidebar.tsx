@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
 
 export default function Sidebar() {
   return (
@@ -24,6 +25,8 @@ export default function Sidebar() {
           <TabsTrigger value="drums">Drums</TabsTrigger>
           <TabsTrigger value="others">Others</TabsTrigger>
         </TabsList>
+
+        <Separator className="my-2" />
 
         <TabsContent
           value="guitar"
