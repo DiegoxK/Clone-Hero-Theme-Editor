@@ -23,6 +23,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  background-image: url("/defaults/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 :root {
   --background: oklch(0.9926 0.011 123.451);
   --foreground: oklch(0.3513 0.0102 99.1612);
@@ -99,7 +107,7 @@
   --accent-foreground: oklch(0.2701 0.0101 80.6332);
   --destructive: oklch(0.8247 0.1463 104.3983);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.3724 0.0107 56.0383);
+  --border: oklch(82.646% 0.12097 118.054);
   --input: oklch(0.3724 0.0107 56.0383);
   --ring: oklch(0.9082 0.1559 118.8168);
   --chart-1: oklch(0.9082 0.1559 118.8168);

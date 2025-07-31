@@ -26,7 +26,7 @@ export default function Sidebar() {
           <TabsTrigger value="others">Others</TabsTrigger>
         </TabsList>
 
-        <Separator className="my-2" />
+        <Separator className="bg-border my-2" />
 
         <TabsContent
           value="guitar"
