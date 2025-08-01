@@ -3,7 +3,7 @@ import Sidebar from "./_components/layout/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-background/50 flex h-screen flex-col backdrop-blur-sm">
+    <div className="bg-background flex h-screen flex-col">
       <Header />
       <div className="flex grow overflow-hidden">
         <Sidebar />
