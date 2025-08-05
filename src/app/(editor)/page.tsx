@@ -17,17 +17,18 @@ export default function Editor() {
               className="w-full object-fill"
             />
           </AspectRatio>
-          <img
+          {/* <img
             src="/example.png"
             alt=""
             className="absolute inset-0 w-full opacity-100"
-          />
-          {/* <Highway /> */}
-          {/* <Strings /> */}
-          {/* <BeatLines /> */}
+          /> */}
+          <Highway />
+          <Strings />
+          <BeatLines />
           <MultiplierCircle />
+          <DotRow />
           <Sidebars />
-          {/* <Strikers /> */}
+          <Strikers state="regular" />
           {/* <Notes /> */}
           <PowerMetter />
         </div>
@@ -101,7 +102,7 @@ const Sidebars = () => {
             key={bar.key}
             src="/sprites/layout/sidebar.png"
             alt=""
-            className="absolute bottom-0 -translate-x-1/2 mask-t-from-80%"
+            className="absolute bottom-0 -translate-x-1/2 mask-t-from-70%"
             style={{
               ...bar.positionStyle,
               width: "7%",
@@ -141,7 +142,7 @@ const Strings = () => {
           className="absolute bottom-[40%] -translate-x-1/2 mask-t-from-10%"
           style={{
             ...pos.style,
-            width: "3%",
+            width: "3.1%",
             height: "250%",
             transformOrigin: "50% 100%",
             transform: "rotateX(60deg) translateZ(-20cqw)",
@@ -317,6 +318,29 @@ const MultiplierCircle = () => {
         className="absolute right-[28%] bottom-[25.55%]"
         style={{
           width: "13%",
+        }}
+      />
+    </>
+  );
+};
+
+const DotRow = () => {
+  return (
+    <>
+      <img
+        src="/sprites/other/dotrow_0.png"
+        alt="Star Power Meter"
+        className="absolute right-[36.4%] bottom-[35.5%]"
+        style={{
+          width: "4%",
+        }}
+      />
+      <img
+        src="/sprites/other/dotrow_1.png"
+        alt="Star Power Meter"
+        className="absolute right-[36.9%] bottom-[36.8%] rotate-2"
+        style={{
+          width: "3%",
         }}
       />
     </>
