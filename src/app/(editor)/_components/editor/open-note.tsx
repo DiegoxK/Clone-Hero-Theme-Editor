@@ -6,12 +6,16 @@ type OpenNoteProps = {
 
 export default function OpenNote({ guitarColors }: OpenNoteProps) {
   return (
-    <div className="absolute bottom-[26%] left-[50%] w-[29cqw] -translate-x-1/2">
-      <img src="/sprites/guitar/guitarNote_Open_Base.png" alt="" />
+    <div className="absolute bottom-[24.5%] left-[50%] aspect-[334/64] w-[29cqw] -translate-x-1/2">
+      <img
+        src="/sprites/guitar/guitarNote_Open_Base.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
       <img
         src="/sprites/guitar/guitarNote_Open_Body1.png"
         alt=""
-        className="absolute inset-0"
+        className="absolute inset-0 h-full w-full object-contain"
       />
       <div
         className="absolute inset-0 mix-blend-overlay"
@@ -27,7 +31,7 @@ export default function OpenNote({ guitarColors }: OpenNoteProps) {
       <img
         src="/sprites/guitar/guitarNote_Open_Shine8.png"
         alt=""
-        className="absolute inset-0"
+        className="absolute inset-0 h-full w-full object-contain"
       />
       <div
         className="absolute inset-0 mix-blend-multiply"
