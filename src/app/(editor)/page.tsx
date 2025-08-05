@@ -24,11 +24,11 @@ export default function Editor() {
           />
           <Highway />
           <Strings />
-          {/* <BeatLines /> */}
+          <BeatLines />
           <Sidebars />
-          {/* <Strikers /> */}
+          <Strikers />
           {/* <Notes /> */}
-          {/* <PowerMetter /> */}
+          <PowerMetter />
         </div>
       </div>
       <div className="border-t p-4">
@@ -86,6 +86,15 @@ const Sidebars = () => {
           perspectiveOrigin: "50% 100%",
         }}
       >
+        <img
+          src="/sprites/other/spr_rockmeter_strip6_5.png"
+          alt=""
+          className="absolute right-[29%] bottom-[12.5%] -translate-x-1/2 -rotate-26"
+          style={{
+            width: "1.9%",
+            transform: "scaleX(-1)",
+          }}
+        />
         {sidebarData.map((bar) => (
           <img
             key={bar.key}
@@ -102,16 +111,6 @@ const Sidebars = () => {
           />
         ))}
       </div>
-
-      <img
-        src="/sprites/other/spr_rockmeter_strip6_5.png"
-        alt=""
-        className="absolute right-[29%] bottom-[12.5%] -translate-x-1/2 -rotate-26"
-        style={{
-          width: "1.9%",
-          transform: "scaleX(-1)",
-        }}
-      />
     </>
   );
 };
@@ -153,106 +152,116 @@ const Strings = () => {
 };
 
 const BeatLines = () => {
+  const lineData = [
+    {
+      key: "line-1",
+      style: {
+        bottom: "27.5%",
+        width: "27%",
+      },
+    },
+    {
+      key: "line-2",
+      style: {
+        bottom: "46.5%",
+        width: "17%",
+      },
+    },
+  ];
+
   return (
     <>
-      <img
-        src="/sprites/layout/beatline.png"
-        alt=""
-        className="absolute bottom-38 left-[50%] -translate-x-1/2"
-        style={{
-          width: "27vw",
-        }}
-      />
-      <img
-        src="/sprites/layout/beatline.png"
-        alt=""
-        className="absolute bottom-64 left-[50%] -translate-x-1/2"
-        style={{
-          width: "18%",
-        }}
-      />
+      {lineData.map((line) => (
+        <img
+          key={line.key}
+          src="/sprites/layout/beatline.png"
+          alt=""
+          className="absolute left-[50%] -translate-x-1/2"
+          style={line.style}
+        />
+      ))}
     </>
   );
 };
 
-const Strikers = () => {
-  const Striker = ({
-    position,
-    headColor,
-    ringColor,
-  }: {
-    position: number;
-    headColor: string;
-    ringColor: string;
-  }) => {
-    return (
-      <div className="relative h-19 w-19">
-        <Image
-          src={`/sprites/guitar/striker_GuitarUnderlay${position}.png`}
-          alt=""
-          fill={true}
-          className="object-contain"
-        />
-        <Image
-          src={`/sprites/guitar/striker_GuitarHead${position}.png`}
-          alt=""
-          fill={true}
-          className="object-contain"
-        />
+const strikerData = [
+  { key: 1, position: 1, headColor: "#00FF00", ringColor: "#00FF00" },
+  { key: 2, position: 2, headColor: "#FF0000", ringColor: "#FF0000" },
+  { key: 3, position: 3, headColor: "#FFFF00", ringColor: "#FFFF00" },
+  { key: 4, position: 4, headColor: "#0089FF", ringColor: "#0089FF" },
+  { key: 5, position: 5, headColor: "#FFB300", ringColor: "#FFB300" },
+];
 
-        <Image
-          src={`/sprites/guitar/striker_HeadColor${position}.png`}
-          alt=""
-          fill={true}
-          className="object-contain"
-        />
-
-        <div
-          className="absolute inset-0 mix-blend-multiply"
-          style={{
-            backgroundColor: headColor,
-            maskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
-            WebkitMaskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
-            maskRepeat: "no-repeat",
-            maskSize: "contain",
-            maskPosition: "center",
-          }}
-        />
-
-        {/* <Image
-          src="/sprites/guitar/striker_HeadGlow1.png"
-          alt=""
-          fill={true}
-          className="object-contain"
-        /> */}
-        <Image
-          src={`/sprites/guitar/striker_Ring${position}.png`}
-          alt=""
-          fill={true}
-          className="object-contain"
-        />
-        <div
-          className="absolute inset-0 mix-blend-multiply"
-          style={{
-            backgroundColor: ringColor,
-            maskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
-            WebkitMaskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
-            maskRepeat: "no-repeat",
-            maskSize: "contain",
-            maskPosition: "center",
-          }}
-        />
-      </div>
-    );
-  };
-
+const Striker = ({
+  position,
+  headColor,
+  ringColor,
+}: {
+  position: number;
+  headColor: string;
+  ringColor: string;
+}) => {
   return (
-    <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2">
-      <Striker position={1} headColor="#00FF00" ringColor="#00FF00" />
-      <Striker position={2} headColor="#FF0000" ringColor="#FF0000" />
-      <Striker position={3} headColor="#FFFF00" ringColor="#FFFF00" />
-      <Striker position={4} headColor="#0089FF" ringColor="#0089FF" />
-      <Striker position={5} headColor="#FFB300" ringColor="#FFB300" />
+    <div className="relative aspect-square w-[7.5cqw]">
+      <img
+        src={`/sprites/guitar/striker_GuitarUnderlay${position}.png`}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <img
+        src={`/sprites/guitar/striker_GuitarHead${position}.png`}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <img
+        src={`/sprites/guitar/striker_HeadColor${position}.png`}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+
+      <div
+        className="absolute inset-0 mix-blend-multiply"
+        style={{
+          backgroundColor: headColor,
+          maskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
+          WebkitMaskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
+          maskRepeat: "no-repeat",
+          maskSize: "contain",
+          maskPosition: "center",
+        }}
+      />
+
+      <img
+        src={`/sprites/guitar/striker_Ring${position}.png`}
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <div
+        className="absolute inset-0 mix-blend-multiply"
+        style={{
+          backgroundColor: ringColor,
+          maskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+          WebkitMaskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+          maskRepeat: "no-repeat",
+          maskSize: "contain",
+          maskPosition: "center",
+        }}
+      />
+    </div>
+  );
+};
+
+const Strikers = () => {
+  return (
+    <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.35cqw]">
+      {strikerData.map((striker) => (
+        <Striker
+          key={striker.key}
+          headColor={striker.headColor}
+          position={striker.position}
+          ringColor={striker.ringColor}
+        />
+      ))}
     </div>
   );
 };
@@ -261,11 +270,11 @@ const PowerMetter = () => {
   return (
     <img
       src="/sprites/other/spr_starpower_meter_strip5_0.png"
-      alt=""
-      className="absolute right-[31.6%] bottom-[12%] -translate-x-1/2 -rotate-26"
+      alt="Star Power Meter"
+      className="absolute right-[31.6%] bottom-[12%]"
       style={{
         width: "1.9%",
-        transform: "scaleX(-1)",
+        transform: "translateX(-50%) rotate(-26deg) scaleX(-1)",
       }}
     />
   );
