@@ -1,40 +1,56 @@
-const strikerData = [
-  {
-    key: 1,
-    position: 1,
-    headColor: "#00FF00",
-    headLight: "#00FF00",
-    ringColor: "#00FF00",
-  },
-  {
-    key: 2,
-    position: 2,
-    headColor: "#FF0000",
-    headLight: "#FF0000",
-    ringColor: "#FF0000",
-  },
-  {
-    key: 3,
-    position: 3,
-    headColor: "#FFFF00",
-    headLight: "#FFFF00",
-    ringColor: "#FFFF00",
-  },
-  {
-    key: 4,
-    position: 4,
-    headColor: "#0089FF",
-    headLight: "#0089FF",
-    ringColor: "#0089FF",
-  },
-  {
-    key: 5,
-    position: 5,
-    headColor: "#FFB300",
-    headLight: "#FFB300",
-    ringColor: "#FFB300",
-  },
+import type { Theme } from "@/lib/default-theme";
+
+type StrikersProps = {
+  guitarColors: Theme["guitar"];
+};
+
+const STRIKER_MAPPING = [
+  { name: "green", position: 1 },
+  { name: "red", position: 2 },
+  { name: "yellow", position: 3 },
+  { name: "blue", position: 4 },
+  { name: "orange", position: 5 },
 ];
+
+const Strikers = ({ guitarColors }: StrikersProps) => {
+  const strikerData = STRIKER_MAPPING.map((striker) => {
+    const colorName = striker.name;
+
+    const headColorKey = `striker_cover_${colorName}` as keyof Theme["guitar"];
+    const headLightKey =
+      `striker_head_light_${colorName}` as keyof Theme["guitar"];
+
+    return {
+      position: striker.position,
+      headColor: guitarColors[headColorKey],
+      headLight: guitarColors[headLightKey],
+      ringColor: guitarColors[headColorKey],
+    };
+  });
+
+  return (
+    <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.55cqw]">
+      {strikerData.map((striker) => (
+        <Striker
+          key={striker.position}
+          pressed={false}
+          headColor={striker.headColor}
+          position={striker.position}
+          ringColor={striker.ringColor}
+          headLight={striker.headLight}
+        />
+      ))}
+    </div>
+  );
+};
+
+interface StrikerProps {
+  pressed: boolean;
+  position: number;
+  headColor: string;
+  ringColor: string;
+  headLight: string;
+}
 
 const Striker = ({
   pressed,
@@ -42,13 +58,7 @@ const Striker = ({
   headColor,
   ringColor,
   headLight,
-}: {
-  pressed: boolean;
-  position: number;
-  headColor: string;
-  ringColor: string;
-  headLight: string;
-}) => {
+}: StrikerProps) => {
   return (
     <div className="relative aspect-square w-[7.5cqw]">
       {pressed ? (
@@ -118,23 +128,6 @@ const Striker = ({
           maskPosition: "center",
         }}
       />
-    </div>
-  );
-};
-
-const Strikers = () => {
-  return (
-    <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.35cqw]">
-      {strikerData.map((striker) => (
-        <Striker
-          key={striker.key}
-          pressed={false}
-          headColor={striker.headColor}
-          position={striker.position}
-          ringColor={striker.ringColor}
-          headLight={striker.headLight}
-        />
-      ))}
     </div>
   );
 };

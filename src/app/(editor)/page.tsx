@@ -32,7 +32,7 @@ export default function Editor() {
           <MultiplierCircle />
           <DotRow />
           <Sidebars />
-          <Strikers />
+          <Strikers guitarColors={theme.guitar} />
           <Notes />
           <PowerMetter />
         </div>
