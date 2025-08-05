@@ -14,6 +14,7 @@ import Sidebars from "./_components/editor/sidebars";
 import Strikers from "./_components/editor/strikers";
 import PowerMetter from "./_components/editor/power-metter";
 import BgImage from "./_components/editor/bg-image";
+import OpenNote from "./_components/editor/open-note";
 
 export default function Editor() {
   const [theme, setTheme] = useState(initialThemeData);
@@ -35,6 +36,7 @@ export default function Editor() {
           <Strikers pressed={false} guitarColors={theme.guitar} />
           <PowerMetter />
           <Notes guitarColors={theme.guitar} />
+          <OpenNote guitarColors={theme.guitar} />
         </div>
       </div>
       <div className="border-t p-4">
