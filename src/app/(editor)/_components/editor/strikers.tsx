@@ -2,6 +2,7 @@ import type { Theme } from "@/lib/default-theme";
 
 type StrikersProps = {
   guitarColors: Theme["guitar"];
+  pressed: boolean;
 };
 
 const STRIKER_MAPPING = [
@@ -12,7 +13,7 @@ const STRIKER_MAPPING = [
   { name: "orange", position: 5 },
 ];
 
-const Strikers = ({ guitarColors }: StrikersProps) => {
+const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
 
@@ -33,7 +34,7 @@ const Strikers = ({ guitarColors }: StrikersProps) => {
       {strikerData.map((striker) => (
         <Striker
           key={striker.position}
-          pressed={false}
+          pressed={pressed}
           headColor={striker.headColor}
           position={striker.position}
           ringColor={striker.ringColor}
