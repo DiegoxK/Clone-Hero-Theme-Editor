@@ -82,7 +82,7 @@ const Note = ({ noteColor, animColor, className }: NoteProps) => {
       <div
         className="absolute inset-0 mix-blend-multiply"
         style={{
-          top: "-38%",
+          top: "-37%",
           backgroundColor: animColor,
           maskImage: "url(/sprites/guitar/guitarNote_Strum_Shine12.png)",
           WebkitMaskImage: "url(/sprites/guitar/guitarNote_Strum_Shine12.png)",
