@@ -25,7 +25,8 @@ export default function Editor() {
           {/* <Highway /> */}
           {/* <Strings /> */}
           {/* <BeatLines /> */}
-          {/* <Sidebars /> */}
+          <MultiplierCircle />
+          <Sidebars />
           {/* <Strikers /> */}
           {/* <Notes /> */}
           <PowerMetter />
@@ -285,6 +286,37 @@ const PowerMetter = () => {
         style={{
           width: "1.2%",
           transform: "translateX(-50%) rotate(-26deg) scaleX(-1)",
+        }}
+      />
+    </>
+  );
+};
+
+const MultiplierCircle = () => {
+  return (
+    <>
+      <img
+        src="/sprites/other/spr_multiplier_circle_strip3_1.png"
+        alt="Star Power Meter"
+        className="absolute right-[28%] bottom-[25.55%]"
+        style={{
+          width: "13%",
+        }}
+      />
+      <img
+        src="/sprites/other/spr_multiplier_circle_strip3_2.png"
+        alt="Star Power Meter"
+        className="absolute right-[28%] bottom-[25.55%]"
+        style={{
+          width: "13%",
+        }}
+      />
+      <img
+        src="/sprites/other/spr_multiplier_circle_strip3_0.png"
+        alt="Star Power Meter"
+        className="absolute right-[28%] bottom-[25.55%]"
+        style={{
+          width: "13%",
         }}
       />
     </>
