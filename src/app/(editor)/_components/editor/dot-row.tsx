@@ -1,4 +1,10 @@
-const DotRow = () => {
+import type { Theme } from "@/lib/default-theme";
+
+type OpenNoteProps = {
+  otherColors: Theme["other"];
+};
+
+const DotRow = ({ otherColors }: OpenNoteProps) => {
   return (
     <>
       <img
@@ -19,7 +25,7 @@ const DotRow = () => {
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
-            backgroundColor: "#00D8D8",
+            backgroundColor: otherColors.combo_one,
             maskImage: "url(/sprites/other/dotrow_1.png)",
             WebkitMaskImage: "url(/sprites/other/dotrow_1.png)",
             maskRepeat: "no-repeat",
