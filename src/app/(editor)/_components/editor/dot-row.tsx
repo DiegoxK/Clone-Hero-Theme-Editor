@@ -16,12 +16,6 @@ const DotRow = ({ otherColors }: OpenNoteProps) => {
         }}
       />
       <div className="absolute right-[36.9%] bottom-[36.7%] aspect-[57/84] w-[3cqw] rotate-1">
-        <img
-          src="/sprites/other/dotrow_1.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-contain"
-        />
-
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
