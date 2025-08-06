@@ -69,8 +69,24 @@ const Striker = ({
     <div className="relative aspect-square w-[7.5cqw]">
       {pressed ? (
         <>
+          <img
+            src={`/sprites/guitar/striker_down_${position}.png`}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain"
+          />
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              backgroundColor: baseColor,
+              maskImage: `url(/sprites/guitar/striker_down_${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_down_${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+          <div
+            className="absolute inset-0 mix-blend-screen"
             style={{
               backgroundColor: headLight,
               maskImage: `url(/sprites/guitar/striker_DownGlow_${position}.png)`,
@@ -79,12 +95,6 @@ const Striker = ({
               maskSize: "contain",
               maskPosition: "center",
             }}
-          />
-
-          <img
-            src={`/sprites/guitar/striker_down_${position}.png`}
-            alt=""
-            className="absolute inset-0 h-full w-full object-contain mix-blend-screen"
           />
         </>
       ) : (
