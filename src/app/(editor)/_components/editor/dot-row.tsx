@@ -1,10 +1,10 @@
 import type { Theme } from "@/lib/default-theme";
 
-type OpenNoteProps = {
+type DotRowProps = {
   otherColors: Theme["other"];
 };
 
-const DotRow = ({ otherColors }: OpenNoteProps) => {
+const DotRow = ({ otherColors }: DotRowProps) => {
   return (
     <>
       <img
