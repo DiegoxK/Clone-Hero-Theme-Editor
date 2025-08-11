@@ -10,16 +10,16 @@ const PowerMetter = () => {
           transform: "translateX(-50%) rotate(-26deg) scaleX(-1)",
         }}
       />
-      <div className="absolute right-[31.5%] bottom-[14%] aspect-[31/124] w-[1.63cqw] -scale-x-[1] rotate-[-27deg]">
+      <div className="absolute right-[31.6%] bottom-[14.2%] aspect-[31/124] w-[1.63cqw] -scale-x-[1] rotate-[-27deg]">
         <img
           src="/sprites/other/spr_starpower_meter_strip5_1.png"
           alt="Star Power Meter"
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute inset-0 h-full w-full object-contain opacity-50"
         />
         <div
           className="absolute inset-0 mix-blend-overlay"
           style={{
-            backgroundColor: "#FFFF00",
+            backgroundColor: "#004848",
             maskImage: "url(/sprites/other/spr_starpower_meter_strip5_1.png)",
             WebkitMaskImage:
               "url(/sprites/other/spr_starpower_meter_strip5_1.png)",
