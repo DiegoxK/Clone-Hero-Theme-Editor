@@ -6,7 +6,7 @@ type OpenNoteProps = {
 
 export default function OpenNote({ guitarColors }: OpenNoteProps) {
   return (
-    <div className="absolute bottom-[24.5%] left-[50%] aspect-[334/64] w-[29cqw] -translate-x-1/2">
+    <div className="absolute bottom-[33.5%] left-[50%] aspect-[334/64] w-[24cqw] -translate-x-1/2">
       <img
         src="/sprites/guitar/guitarNote_Open_Base.png"
         alt=""

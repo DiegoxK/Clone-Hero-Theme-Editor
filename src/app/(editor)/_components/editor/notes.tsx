@@ -36,7 +36,6 @@ const Notes = ({ guitarColors }: NotesProps) => {
           key={data.key}
           noteColor={data.noteColor}
           animColor={data.animColor}
-          className="-mx-[0.55cqw]"
         />
       ))}
     </div>
@@ -44,14 +43,13 @@ const Notes = ({ guitarColors }: NotesProps) => {
 };
 
 interface NoteProps {
-  className: string;
   noteColor: string;
   animColor: string;
 }
 
-const Note = ({ noteColor, animColor, className }: NoteProps) => {
+const Note = ({ noteColor, animColor }: NoteProps) => {
   return (
-    <div className={cn("relative aspect-square w-[7.8cqw]", className)}>
+    <div className="relative -mx-[0.55cqw] aspect-square w-[7.8cqw]">
       <img
         src="/sprites/guitar/guitarNote_Base_Strum.png"
         alt="Note Base"
