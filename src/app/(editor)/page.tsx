@@ -15,6 +15,7 @@ import BgImage from "./_components/editor/bg-image";
 import OpenNote from "./_components/editor/open-note";
 import { parseINIString } from "@/lib/ini-utils";
 import { Button } from "@/components/ui/button";
+import OpenSustain from "./_components/editor/open-sustain";
 
 export default function Editor() {
   const [theme, setTheme] = useState(initialThemeData);
@@ -74,6 +75,7 @@ export default function Editor() {
           <Strikers pressed={false} guitarColors={theme.guitar} />
           <PowerMetter otherColors={theme.other} />
           <Notes guitarColors={theme.guitar} />
+          <OpenSustain guitarColors={theme.guitar} />
           <OpenNote guitarColors={theme.guitar} />
         </div>
       </div>
