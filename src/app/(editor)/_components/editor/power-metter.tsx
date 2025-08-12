@@ -80,7 +80,7 @@ const MeterLightning = ({ color }: { color: string }) => (
       className="absolute right-[29.35%] bottom-[15.8%] aspect-[128/512] w-[3.3cqw]"
       style={{
         transformOrigin: "50% 100%",
-        filter: "blur(0.15cqw) brightness(1.5)",
+        filter: "blur(0.15cqw) brightness(1.3)",
         transform: "rotateX(60deg) rotateZ(-0.6deg) scaleX(-1) scaleX(0.4)",
       }}
     >
