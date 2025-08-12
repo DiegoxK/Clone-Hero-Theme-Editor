@@ -16,6 +16,7 @@ import OpenNote from "./_components/editor/open-note";
 import { parseINIString } from "@/lib/ini-utils";
 import { Button } from "@/components/ui/button";
 import OpenSustain from "./_components/editor/open-sustain";
+import NoteSustains from "./_components/editor/note-sustains";
 
 export default function Editor() {
   const [theme, setTheme] = useState(initialThemeData);
@@ -74,6 +75,7 @@ export default function Editor() {
           <Sidebars />
           <Strikers pressed={false} guitarColors={theme.guitar} />
           <PowerMetter otherColors={theme.other} />
+          <NoteSustains guitarColors={theme.guitar} />
           <Notes guitarColors={theme.guitar} />
           <OpenSustain guitarColors={theme.guitar} />
           <OpenNote guitarColors={theme.guitar} />
