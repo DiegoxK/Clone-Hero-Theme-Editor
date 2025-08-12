@@ -14,12 +14,12 @@ const OpenSustain = ({ guitarColors }: OpenSustainProps) => {
       }}
     >
       <div
-        className="absolute bottom-[18%] left-1/2 w-[56%] -translate-x-1/2"
+        className="absolute bottom-[0%] left-1/2 w-[56%] -translate-x-1/2"
         style={{
-          height: "100%",
-          width: "37%",
+          height: "200%",
+          width: "42%",
           transformOrigin: "50% 100%",
-          transform: "rotateX(60deg) translateZ(-13cqw) translateY(-60cqw)",
+          transform: "rotateX(60deg) translateZ(-13cqw) translateY(-131cqw)",
         }}
       >
         <SustainVisual color={guitarColors.sustain_open} />
@@ -35,12 +35,29 @@ const SustainVisual = ({ color }: { color: string }) => {
         className="w-full flex-shrink-0"
         style={{
           backgroundColor: color,
-          maskImage: "url(/sprites/guitar/open_sustain_nocap.png)",
-          WebkitMaskImage: "url(/sprites/guitar/open_sustain_nocap.png)",
+          maskImage: `
+            linear-gradient(
+              to right,
+              white, 
+              rgba(255, 255, 255, 0.2), 
+              white
+            ), 
+            url(/sprites/guitar/open_sustain_nocap.png)
+          `,
+          maskComposite: "intersect",
+          WebkitMaskImage: `
+            linear-gradient(
+              to right,
+              white, 
+              rgba(255, 255, 255, 0.2), 
+              white
+            ), 
+            url(/sprites/guitar/open_sustain_nocap.png)
+          `,
+          WebkitMaskComposite: "source-in",
           maskSize: "contain",
           maskRepeat: "no-repeat",
           maskPosition: "center",
-
           aspectRatio: "296 / 86",
         }}
       />
@@ -49,8 +66,26 @@ const SustainVisual = ({ color }: { color: string }) => {
         className="w-full grow"
         style={{
           backgroundColor: color,
-          maskImage: "url(/sprites/guitar/open_sustain_body.png)",
-          WebkitMaskImage: "url(/sprites/guitar/open_sustain_body.png)",
+          maskImage: `
+            linear-gradient(
+              to right,
+              white, 
+              rgba(255, 255, 255, 0.2), 
+              white
+            ), 
+            url(/sprites/guitar/open_sustain_body.png)
+          `,
+          maskComposite: "intersect",
+          WebkitMaskImage: `
+            linear-gradient(
+              to right,
+              white, 
+              rgba(255, 255, 255, 0.2), 
+              white
+            ), 
+            url(/sprites/guitar/open_sustain_body.png)
+          `,
+          WebkitMaskComposite: "source-in",
           maskSize: "100% 100%",
           maskRepeat: "no-repeat",
           maskPosition: "center",
