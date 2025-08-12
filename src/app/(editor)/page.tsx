@@ -68,11 +68,11 @@ export default function Editor() {
           <Highway />
           <GuitarStrings />
           <BeatLines />
-          <MultiplierCircle />
-          <DotRow />
+          <MultiplierCircle otherColors={theme.other} />
+          <DotRow otherColors={theme.other} />
           <Sidebars />
           <Strikers pressed={false} guitarColors={theme.guitar} />
-          <PowerMetter />
+          <PowerMetter otherColors={theme.other} />
           <Notes guitarColors={theme.guitar} />
           <OpenNote guitarColors={theme.guitar} />
         </div>
