@@ -19,7 +19,7 @@ const DotRow = ({ otherColors }: DotRowProps) => {
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
-            backgroundColor: otherColors.combo_one,
+            backgroundColor: otherColors.combo_four,
             maskImage: "url(/sprites/other/dotrow_1.png)",
             WebkitMaskImage: "url(/sprites/other/dotrow_1.png)",
             maskRepeat: "no-repeat",
