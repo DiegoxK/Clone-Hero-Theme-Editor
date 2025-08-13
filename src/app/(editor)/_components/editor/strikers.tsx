@@ -129,7 +129,7 @@ const Striker = ({
           /> */}
 
           <div
-            className="absolute inset-0 opacity-90 brightness-60"
+            className="absolute inset-0 opacity-90 brightness-55"
             style={{
               backgroundColor: headColor,
               maskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
