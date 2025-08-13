@@ -1,10 +1,9 @@
-import type { Theme } from "@/lib/default-theme";
+"use client";
 
-type PowerMetterProps = {
-  otherColors: Theme["other"];
-};
+import { useThemeStore } from "@/hooks/use-theme-store";
 
-const PowerMetter = ({ otherColors }: PowerMetterProps) => {
+const PowerMetter = () => {
+  const otherColors = useThemeStore((state) => state.theme.other);
   return (
     <>
       <MeterFrame />

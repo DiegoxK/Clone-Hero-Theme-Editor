@@ -1,8 +1,7 @@
-import type { Theme } from "@/lib/default-theme";
+"use client";
 
-type StrikersProps = {
-  guitarColors: Theme["guitar"];
-};
+import { useThemeStore } from "@/hooks/use-theme-store";
+import type { Theme } from "@/lib/default-theme";
 
 const STRIKER_MAPPING = [
   { name: "green", position: 1 },
@@ -12,7 +11,8 @@ const STRIKER_MAPPING = [
   { name: "orange", position: 5 },
 ];
 
-const Strikers = ({ guitarColors }: StrikersProps) => {
+const Strikers = () => {
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
 

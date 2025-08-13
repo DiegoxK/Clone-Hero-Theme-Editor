@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import type { Theme } from "@/lib/default-theme";
-
-type MultiplierProps = {
-  otherColors: Theme["other"];
-};
+import { useThemeStore } from "@/hooks/use-theme-store";
 
 const MULTIPLIER_DATA = [
   {
@@ -36,7 +33,8 @@ const MULTIPLIER_DATA = [
   },
 ];
 
-const Multiplier = ({ otherColors }: MultiplierProps) => {
+const Multiplier = () => {
+  const otherColors = useThemeStore((state) => state.theme.other);
   const [currentLevel, setCurrentLevel] = useState(4);
 
   const handleCycleMultiplier = () => {

@@ -1,10 +1,10 @@
-import type { Theme } from "@/lib/default-theme";
+"use client";
 
-type OpenNoteProps = {
-  guitarColors: Theme["guitar"];
-};
+import { useThemeStore } from "@/hooks/use-theme-store";
 
-export default function OpenNote({ guitarColors }: OpenNoteProps) {
+export default function OpenNote() {
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
+
   return (
     <div className="absolute bottom-[33.5%] left-[50%] aspect-[334/64] w-[24cqw] -translate-x-1/2">
       <img

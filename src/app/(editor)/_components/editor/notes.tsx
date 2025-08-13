@@ -1,11 +1,6 @@
 "use client";
-
+import { useThemeStore } from "@/hooks/use-theme-store";
 import { type Theme } from "@/lib/default-theme";
-import { cn } from "@/lib/utils";
-
-type NotesProps = {
-  guitarColors: Theme["guitar"];
-};
 
 const NOTE_MAPPING = [
   { name: "green", position: 1 },
@@ -15,7 +10,9 @@ const NOTE_MAPPING = [
   { name: "orange", position: 5 },
 ];
 
-const Notes = ({ guitarColors }: NotesProps) => {
+const Notes = () => {
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
+
   const noteData = NOTE_MAPPING.map((note) => {
     const colorName = note.name;
 

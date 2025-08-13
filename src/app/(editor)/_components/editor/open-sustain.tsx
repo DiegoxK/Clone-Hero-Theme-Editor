@@ -1,10 +1,8 @@
-import type { Theme } from "@/lib/default-theme";
+"use client";
+import { useThemeStore } from "@/hooks/use-theme-store";
 
-type OpenSustainProps = {
-  guitarColors: Theme["guitar"];
-};
-
-const OpenSustain = ({ guitarColors }: OpenSustainProps) => {
+const OpenSustain = () => {
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
   return (
     <div
       className="absolute inset-0"
