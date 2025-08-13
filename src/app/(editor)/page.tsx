@@ -6,8 +6,6 @@ import { initialThemeData, type Theme } from "@/lib/default-theme";
 import Highway from "./_components/editor/highway";
 import GuitarStrings from "./_components/editor/guitar-strings";
 import BeatLines from "./_components/editor/beatlines";
-import MultiplierCircle from "./_components/editor/multiplier-circle";
-import DotRow from "./_components/editor/dot-row";
 import Sidebars from "./_components/editor/sidebars";
 import Strikers from "./_components/editor/strikers";
 import PowerMetter from "./_components/editor/power-metter";
@@ -17,6 +15,7 @@ import { parseINIString } from "@/lib/ini-utils";
 import { Button } from "@/components/ui/button";
 import OpenSustain from "./_components/editor/open-sustain";
 import NoteSustains from "./_components/editor/note-sustains";
+import Multiplier from "./_components/editor/multiplier";
 
 export default function Editor() {
   const [theme, setTheme] = useState(initialThemeData);
@@ -70,8 +69,7 @@ export default function Editor() {
           <Highway />
           <GuitarStrings />
           <BeatLines />
-          <MultiplierCircle otherColors={theme.other} />
-          <DotRow otherColors={theme.other} />
+          <Multiplier otherColors={theme.other} />
           <Sidebars />
           <Strikers pressed={false} guitarColors={theme.guitar} />
           <PowerMetter otherColors={theme.other} />
