@@ -26,10 +26,10 @@ export default function Editor() {
           <BeatLines />
           <Multiplier />
           <Sidebars />
-          <Strikers />
           <PowerMetter />
           <NoteSustains />
           <Notes />
+          <Strikers />
           <OpenSustain />
           <OpenNote />
         </div>

@@ -13,6 +13,7 @@ const STRIKER_MAPPING = [
 
 const Strikers = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
 
@@ -66,6 +67,8 @@ const Striker = ({
   ringColor,
   headLight,
 }: StrikerProps) => {
+  const otherColors = useThemeStore((state) => state.theme.other);
+
   return (
     <div className="relative aspect-square w-[7.5cqw]">
       {state === "pressed" ? (
@@ -175,6 +178,22 @@ const Striker = ({
               maskPosition: "center",
             }}
           />
+          <img
+            src={`/sprites/other/spr_hitflames_strip16_3.png`}
+            alt=""
+            className="absolute bottom-[50%] left-0 h-full w-full scale-200 object-contain opacity-35"
+          />
+          <div
+            className="absolute bottom-[50%] left-0 h-full w-full scale-200 opacity-85 mix-blend-overlay brightness-105"
+            style={{
+              backgroundColor: otherColors.striker_hit_flame,
+              maskImage: `url(/sprites/other/spr_hitflames_strip16_3.png)`,
+              WebkitMaskImage: `url(/sprites/other/spr_hitflames_strip16_3.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
         </>
       ) : (
         <>
@@ -210,12 +229,6 @@ const Striker = ({
               maskPosition: "center",
             }}
           />
-          {/* <img
-            src={`/sprites/guitar/striker_HeadColor${position}.png`}
-            alt=""
-            className="absolute inset-0 h-full w-full object-contain"
-          /> */}
-
           <div
             className="absolute inset-0 opacity-90 brightness-55"
             style={{
