@@ -17,6 +17,8 @@ const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
 
+    const headCoverColorKey =
+      `striker_head_cover_${colorName}` as keyof Theme["guitar"];
     const headColorKey = `striker_cover_${colorName}` as keyof Theme["guitar"];
     const headLightKey =
       `striker_head_light_${colorName}` as keyof Theme["guitar"];
@@ -25,7 +27,7 @@ const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
     return {
       position: striker.position,
       baseColor: guitarColors[baseColorKey],
-      headColor: guitarColors[headColorKey],
+      headColor: guitarColors[headCoverColorKey],
       headLight: guitarColors[headLightKey],
       ringColor: guitarColors[headColorKey],
     };
@@ -120,14 +122,14 @@ const Striker = ({
               maskPosition: "center",
             }}
           />
-          <img
+          {/* <img
             src={`/sprites/guitar/striker_HeadColor${position}.png`}
             alt=""
             className="absolute inset-0 h-full w-full object-contain"
-          />
+          /> */}
 
           <div
-            className="absolute inset-0 mix-blend-multiply"
+            className="absolute inset-0 opacity-90 brightness-60"
             style={{
               backgroundColor: headColor,
               maskImage: `url(/sprites/guitar/striker_HeadColor${position}.png)`,
