@@ -2,7 +2,6 @@ import type { Theme } from "@/lib/default-theme";
 
 type StrikersProps = {
   guitarColors: Theme["guitar"];
-  pressed: boolean;
 };
 
 const STRIKER_MAPPING = [
@@ -13,7 +12,7 @@ const STRIKER_MAPPING = [
   { name: "orange", position: 5 },
 ];
 
-const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
+const Strikers = ({ guitarColors }: StrikersProps) => {
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
 
@@ -38,7 +37,7 @@ const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
       {strikerData.map((striker) => (
         <Striker
           key={striker.position}
-          pressed={pressed}
+          state="open"
           baseColor={striker.baseColor}
           headColor={striker.headColor}
           position={striker.position}
@@ -51,7 +50,7 @@ const Strikers = ({ guitarColors, pressed }: StrikersProps) => {
 };
 
 interface StrikerProps {
-  pressed: boolean;
+  state: "default" | "pressed" | "open";
   position: number;
   baseColor: string;
   headColor: string;
@@ -60,7 +59,7 @@ interface StrikerProps {
 }
 
 const Striker = ({
-  pressed,
+  state,
   position,
   baseColor,
   headColor,
@@ -69,7 +68,7 @@ const Striker = ({
 }: StrikerProps) => {
   return (
     <div className="relative aspect-square w-[7.5cqw]">
-      {pressed ? (
+      {state === "pressed" ? (
         <>
           <img
             src={`/sprites/guitar/striker_down_${position}.png`}
@@ -99,12 +98,101 @@ const Striker = ({
             }}
           />
         </>
+      ) : state === "open" ? (
+        <>
+          <img
+            src={`/sprites/guitar/striker_GuitarUnderlay${position}.png`}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              backgroundColor: baseColor,
+              maskImage: `url(/sprites/guitar/striker_GuitarUnderlay${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_GuitarUnderlay${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+          <img
+            src={`/sprites/guitar/spr_targets_lift.png`}
+            alt=""
+            className="absolute bottom-[-7%] left-[25%] h-full w-[50%] scale-y-200 object-contain"
+          />
+          <div
+            className="absolute bottom-[-7%] left-[25%] h-full w-[50%] scale-y-200 mix-blend-multiply"
+            style={{
+              backgroundColor: baseColor,
+              maskImage: `url(/sprites/guitar/spr_targets_lift.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/spr_targets_lift.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+          <img
+            src={`/sprites/guitar/striker_Ring${position}.png`}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              backgroundColor: ringColor,
+              maskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+          <img
+            src={`/sprites/guitar/striker_GuitarHead${position}.png`}
+            alt=""
+            className="absolute bottom-[18%] left-0 h-full w-full object-contain"
+          />
+          <div
+            className="absolute bottom-[18%] left-0 h-full w-full mix-blend-multiply"
+            style={{
+              backgroundColor: baseColor,
+              maskImage: `url(/sprites/guitar/striker_GuitarHead${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_GuitarHead${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+          <div
+            className="absolute bottom-[18%] left-0 h-full w-full mix-blend-screen brightness-110"
+            style={{
+              backgroundColor: ringColor,
+              maskImage: `url(/sprites/guitar/striker_HeadGlow${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_HeadGlow${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+        </>
       ) : (
         <>
           <img
             src={`/sprites/guitar/striker_GuitarUnderlay${position}.png`}
             alt=""
             className="absolute inset-0 h-full w-full object-contain"
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              backgroundColor: baseColor,
+              maskImage: `url(/sprites/guitar/striker_GuitarUnderlay${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_GuitarUnderlay${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
           />
           <img
             src={`/sprites/guitar/striker_GuitarHead${position}.png`}
@@ -141,22 +229,26 @@ const Striker = ({
           />
         </>
       )}
-      <img
-        src={`/sprites/guitar/striker_Ring${position}.png`}
-        alt=""
-        className="absolute inset-0 h-full w-full object-contain"
-      />
-      <div
-        className="absolute inset-0 mix-blend-multiply"
-        style={{
-          backgroundColor: ringColor,
-          maskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
-          WebkitMaskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
-          maskRepeat: "no-repeat",
-          maskSize: "contain",
-          maskPosition: "center",
-        }}
-      />
+      {state !== "open" && (
+        <>
+          <img
+            src={`/sprites/guitar/striker_Ring${position}.png`}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              backgroundColor: ringColor,
+              maskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+              WebkitMaskImage: `url(/sprites/guitar/striker_Ring${position}.png)`,
+              maskRepeat: "no-repeat",
+              maskSize: "contain",
+              maskPosition: "center",
+            }}
+          />
+        </>
+      )}
     </div>
   );
 };

@@ -71,7 +71,7 @@ export default function Editor() {
           <BeatLines />
           <Multiplier otherColors={theme.other} />
           <Sidebars />
-          <Strikers pressed={false} guitarColors={theme.guitar} />
+          <Strikers guitarColors={theme.guitar} />
           <PowerMetter otherColors={theme.other} />
           <NoteSustains guitarColors={theme.guitar} />
           <Notes guitarColors={theme.guitar} />
@@ -80,7 +80,7 @@ export default function Editor() {
         </div>
       </div>
       <div className="border-t p-4">
-        <nav>Heads | Notes</nav>
+        <nav>[ ] Star Power</nav>
       </div>
     </main>
   );
