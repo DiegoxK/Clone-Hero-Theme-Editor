@@ -3,6 +3,7 @@
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
+import { useAssetStore } from "@/hooks/stores/use-asset-store";
 
 export default function BottomOptions() {
   const starPower = useEffectsStore((state) => state.starPower);
@@ -11,6 +12,8 @@ export default function BottomOptions() {
   const toggleStrikerHitFlame = useEffectsStore(
     (state) => state.toggleStrikerHitFlame,
   );
+
+  const strikerState = useAssetStore((state) => state.strikerState);
 
   return (
     <div className="flex gap-4">
@@ -28,6 +31,7 @@ export default function BottomOptions() {
       <div className="flex items-center gap-2">
         <Switch
           id="hit-flame-switch"
+          disabled={strikerState !== "open"}
           checked={strikerHitFLame}
           onCheckedChange={toggleStrikerHitFlame}
         />
