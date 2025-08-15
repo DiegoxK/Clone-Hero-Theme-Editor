@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Theme } from "@/lib/default-theme";
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 const MULTIPLIER_DATA = [
   {

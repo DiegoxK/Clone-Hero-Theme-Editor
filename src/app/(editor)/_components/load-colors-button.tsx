@@ -2,7 +2,7 @@
 
 import type { Theme } from "@/lib/default-theme";
 import { Button } from "@/components/ui/button";
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { parseINIString } from "@/lib/ini-utils";
 import { useRef } from "react";
 

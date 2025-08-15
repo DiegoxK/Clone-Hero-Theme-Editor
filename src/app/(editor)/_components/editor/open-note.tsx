@@ -1,6 +1,6 @@
 "use client";
 
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 export default function OpenNote() {
   const guitarColors = useThemeStore((state) => state.theme.guitar);

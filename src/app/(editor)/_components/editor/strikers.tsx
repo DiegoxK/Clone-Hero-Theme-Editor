@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffectsStore } from "@/hooks/use-effects-store";
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import type { Theme } from "@/lib/default-theme";
 
 const STRIKER_MAPPING = [
@@ -53,7 +53,7 @@ const Strikers = () => {
   return (
     <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.35cqw]">
       {strikerData.map((striker) => (
-        <Striker key={striker.position} state="open" {...striker} />
+        <Striker key={striker.position} state="default" {...striker} />
       ))}
     </div>
   );

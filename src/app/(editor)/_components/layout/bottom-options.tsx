@@ -2,7 +2,7 @@
 
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { useEffectsStore } from "@/hooks/use-effects-store";
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 
 export default function BottomOptions() {
   const starPower = useEffectsStore((state) => state.starPower);

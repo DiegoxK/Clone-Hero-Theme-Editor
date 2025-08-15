@@ -1,5 +1,5 @@
 "use client";
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 const OpenSustain = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);

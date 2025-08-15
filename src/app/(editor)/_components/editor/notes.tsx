@@ -1,5 +1,5 @@
 "use client";
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { type Theme } from "@/lib/default-theme";
 
 const NOTE_MAPPING = [

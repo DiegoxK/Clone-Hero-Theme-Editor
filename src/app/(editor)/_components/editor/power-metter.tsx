@@ -1,6 +1,6 @@
 "use client";
 
-import { useThemeStore } from "@/hooks/use-theme-store";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 const PowerMetter = () => {
   const otherColors = useThemeStore((state) => state.theme.other);
