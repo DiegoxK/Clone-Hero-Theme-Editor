@@ -11,6 +11,7 @@ import OpenSustain from "./_components/editor/open-sustain";
 import NoteSustains from "./_components/editor/note-sustains";
 import Multiplier from "./_components/editor/multiplier";
 import LoadColorsButton from "./_components/load-colors-button";
+import BottomOptions from "./_components/layout/bottom-options";
 
 export default function Editor() {
   return (
@@ -35,7 +36,7 @@ export default function Editor() {
         </div>
       </div>
       <div className="border-t p-4">
-        <nav>[ ] Star Power</nav>
+        <BottomOptions />
       </div>
     </main>
   );
