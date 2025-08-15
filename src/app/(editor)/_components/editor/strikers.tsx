@@ -1,5 +1,6 @@
 "use client";
 
+import { useAssetStore } from "@/hooks/stores/use-asset-store";
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import type { Theme } from "@/lib/default-theme";
@@ -31,6 +32,8 @@ const createMaskStyle = (imageUrl: string) => ({
 
 const Strikers = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const cycleStrikerState = useAssetStore((state) => state.cycleStrikerState);
+  const strikerState = useAssetStore((state) => state.strikerState);
 
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
@@ -51,11 +54,18 @@ const Strikers = () => {
   });
 
   return (
-    <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.35cqw]">
-      {strikerData.map((striker) => (
-        <Striker key={striker.position} state="default" {...striker} />
-      ))}
-    </div>
+    <>
+      <div className="absolute bottom-[5%] left-[50%] flex -translate-x-1/2 justify-center gap-x-[0.35cqw]">
+        {strikerData.map((striker) => (
+          <Striker key={striker.position} state={strikerState} {...striker} />
+        ))}
+      </div>
+      <div
+        title="Strikers"
+        className="absolute right-[30.5%] bottom-[8%] z-10 h-[3.5cqw] w-[39cqw] cursor-pointer"
+        onClick={cycleStrikerState}
+      />
+    </>
   );
 };
 
