@@ -133,7 +133,7 @@ const Multiplier = () => {
       </div>
       <div
         title="Multiplier number"
-        className="absolute right-[33%] bottom-[34%] z-10 size-12 cursor-pointer"
+        className="absolute right-[33%] bottom-[34%] z-10 size-[3cqw] cursor-pointer bg-amber-500"
         onClick={handleCycleMultiplier}
       />
     </>
