@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffectsStore } from "@/hooks/use-effects-store";
 import { useThemeStore } from "@/hooks/use-theme-store";
 import type { Theme } from "@/lib/default-theme";
 
@@ -157,6 +158,7 @@ const StrikerPressed = ({ position, baseColor, headLight }: StrikerProps) => (
 
 const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
   const otherColors = useThemeStore((state) => state.theme.other);
+  const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
 
   return (
     <>
@@ -223,18 +225,22 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
         }}
       />
 
-      <img
-        src={`/sprites/other/spr_hitflames_strip16_3.png`}
-        alt=""
-        className="absolute bottom-[50%] left-0 h-full w-full scale-200 object-contain opacity-35"
-      />
-      <div
-        className="absolute bottom-[50%] left-0 h-full w-full scale-200 opacity-85 mix-blend-overlay brightness-105"
-        style={{
-          backgroundColor: otherColors.striker_hit_flame,
-          ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
-        }}
-      />
+      {strikerHitFLame && (
+        <>
+          <img
+            src={`/sprites/other/spr_hitflames_strip16_3.png`}
+            alt=""
+            className="absolute bottom-[50%] left-0 h-full w-full scale-200 object-contain opacity-35"
+          />
+          <div
+            className="absolute bottom-[50%] left-0 h-full w-full scale-200 opacity-85 mix-blend-overlay brightness-105"
+            style={{
+              backgroundColor: otherColors.striker_hit_flame,
+              ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
+            }}
+          />
+        </>
+      )}
     </>
   );
 };
