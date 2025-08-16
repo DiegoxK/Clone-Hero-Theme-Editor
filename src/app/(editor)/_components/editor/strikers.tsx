@@ -169,6 +169,7 @@ const StrikerPressed = ({ position, baseColor, headLight }: StrikerProps) => (
 const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
   const otherColors = useThemeStore((state) => state.theme.other);
   const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
+  const strikerHoldSpark = useEffectsStore((state) => state.strikerHoldSpark);
 
   return (
     <>
@@ -234,6 +235,23 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
           ...createMaskStyle(`/sprites/guitar/striker_HeadGlow${position}.png`),
         }}
       />
+
+      {strikerHoldSpark && (
+        <>
+          <div
+            className="absolute bottom-[42%] left-[-3%] h-full w-full scale-150 opacity-50 blur-sm"
+            style={{
+              backgroundColor: otherColors.striker_hold_spark,
+              ...createMaskStyle(`/sprites/other/heldflames-color_10.png`),
+            }}
+          />
+          <img
+            src={`/sprites/other/heldflames-overlay_10.png`}
+            alt=""
+            className="absolute bottom-[47%] left-[-4%] h-full w-full scale-170 object-contain blur-[0.01cqw]"
+          />
+        </>
+      )}
 
       {strikerHitFLame && (
         <>

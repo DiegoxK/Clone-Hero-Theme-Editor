@@ -7,10 +7,14 @@ import { useAssetStore } from "@/hooks/stores/use-asset-store";
 
 export default function BottomOptions() {
   const starPower = useEffectsStore((state) => state.starPower);
-  const toggleStarPower = useEffectsStore((state) => state.toggleStarPower);
   const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
+  const strikerHoldSpark = useEffectsStore((state) => state.strikerHoldSpark);
+  const toggleStarPower = useEffectsStore((state) => state.toggleStarPower);
   const toggleStrikerHitFlame = useEffectsStore(
     (state) => state.toggleStrikerHitFlame,
+  );
+  const toggleStrikerHoldSpark = useEffectsStore(
+    (state) => state.toggleStrikerHoldSpark,
   );
 
   const strikerState = useAssetStore((state) => state.strikerState);
@@ -37,6 +41,17 @@ export default function BottomOptions() {
         />
         <Label className="cursor-pointer" htmlFor="hit-flame-switch">
           Striker Hit Flame
+        </Label>
+      </div>
+      <div className="flex items-center gap-2">
+        <Switch
+          id="hold-spark-switch"
+          disabled={strikerState !== "open"}
+          checked={strikerHoldSpark}
+          onCheckedChange={toggleStrikerHoldSpark}
+        />
+        <Label className="cursor-pointer" htmlFor="hold-spark-switch">
+          Striker Hold Spark
         </Label>
       </div>
     </div>
