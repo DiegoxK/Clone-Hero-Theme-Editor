@@ -4,6 +4,7 @@ import { useAssetStore } from "@/hooks/stores/use-asset-store";
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import type { Theme } from "@/lib/default-theme";
+import Particles from "./particles";
 
 const STRIKER_MAPPING = [
   { name: "green", position: 1 },
@@ -170,6 +171,7 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
   const otherColors = useThemeStore((state) => state.theme.other);
   const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
   const strikerHoldSpark = useEffectsStore((state) => state.strikerHoldSpark);
+  const noteParticles = useEffectsStore((state) => state.noteParticles);
 
   return (
     <>
@@ -213,7 +215,6 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
           ...createMaskStyle(`/sprites/guitar/striker_Ring${position}.png`),
         }}
       />
-
       <img
         src={`/sprites/guitar/striker_GuitarHead${position}.png`}
         alt=""
@@ -235,7 +236,7 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
           ...createMaskStyle(`/sprites/guitar/striker_HeadGlow${position}.png`),
         }}
       />
-
+      {noteParticles && <Particles />}
       {strikerHoldSpark && (
         <>
           <div

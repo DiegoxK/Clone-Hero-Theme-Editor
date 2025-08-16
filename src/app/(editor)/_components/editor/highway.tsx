@@ -14,7 +14,6 @@ const Highway = () => {
         style={{
           width: "60%",
           height: "570%",
-
           transform: "rotateX(60deg) translateZ(-14.71cqw)",
           transformOrigin: "50% 100%",
         }}
