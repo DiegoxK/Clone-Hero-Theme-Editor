@@ -61,6 +61,7 @@ export default function BottomOptions() {
       <div className="flex items-center gap-2">
         <Switch
           id="note-particles-switch"
+          disabled={strikerState !== "open"}
           checked={noteParticles}
           onCheckedChange={toggleNoteParticles}
         />
