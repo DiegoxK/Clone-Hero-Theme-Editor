@@ -1,5 +1,6 @@
 "use client";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
+import { useAssetStore } from "@/hooks/stores/use-asset-store";
 import { type Theme } from "@/lib/default-theme";
 
 const NOTE_MAPPING = [
@@ -12,6 +13,9 @@ const NOTE_MAPPING = [
 
 const Notes = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+
+  const noteState = useAssetStore((state) => state.noteState);
+  const cycleNoteState = useAssetStore((state) => state.cycleNoteState);
 
   const noteData = NOTE_MAPPING.map((note) => {
     const colorName = note.name;
@@ -27,15 +31,34 @@ const Notes = () => {
   });
 
   return (
-    <div className="absolute bottom-[14%] left-[50%] flex -translate-x-1/2 justify-center">
-      {noteData.map((data) => (
-        <Note
-          key={data.key}
-          noteColor={data.noteColor}
-          animColor={data.animColor}
-        />
-      ))}
-    </div>
+    <>
+      {noteState === "sp" ? (
+        <div className="absolute bottom-[18%] left-[50%] flex -translate-x-1/2 justify-center">
+          {noteData.map((data) => (
+            <SPNote
+              key={data.key}
+              noteColor={data.noteColor}
+              baseColor={guitarColors.note_anim_sp_phrase}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="absolute bottom-[14%] left-[50%] flex -translate-x-1/2 justify-center">
+          {noteData.map((data) => (
+            <Note
+              key={data.key}
+              noteColor={data.noteColor}
+              animColor={data.animColor}
+            />
+          ))}
+        </div>
+      )}
+      <div
+        title="Notes"
+        className="absolute right-[34%] bottom-[18%] z-10 h-[2.8cqw] w-[32cqw] cursor-pointer"
+        onClick={cycleNoteState}
+      />
+    </>
   );
 };
 
@@ -49,12 +72,12 @@ const Note = ({ noteColor, animColor }: NoteProps) => {
     <div className="relative -mx-[0.55cqw] aspect-square w-[7.8cqw]">
       <img
         src="/sprites/guitar/guitarNote_Base_Strum.png"
-        alt="Note Base"
+        alt=""
         className="absolute inset-0 h-full w-full object-contain"
       />
       <img
         src="/sprites/guitar/guitarNote_Body_Strum.png"
-        alt="Note Body"
+        alt=""
         className="absolute inset-0 h-full w-full object-contain"
       />
       <div
@@ -70,7 +93,7 @@ const Note = ({ noteColor, animColor }: NoteProps) => {
       />
       <img
         src="/sprites/guitar/guitarNote_Strum_Shine12.png"
-        alt="Note Shine"
+        alt=""
         className="absolute inset-0 h-full w-full object-contain"
         style={{ top: "-19%" }}
       />
@@ -81,6 +104,55 @@ const Note = ({ noteColor, animColor }: NoteProps) => {
           backgroundColor: animColor,
           maskImage: "url(/sprites/guitar/guitarNote_Strum_Shine12.png)",
           WebkitMaskImage: "url(/sprites/guitar/guitarNote_Strum_Shine12.png)",
+          maskRepeat: "no-repeat",
+          maskSize: "contain",
+          maskPosition: "center",
+        }}
+      />
+    </div>
+  );
+};
+
+interface SPNoteProps {
+  noteColor: string;
+  baseColor: string;
+}
+
+const SPNote = ({ noteColor, baseColor }: SPNoteProps) => {
+  return (
+    <div className="relative -mx-[0.6cqw] aspect-[128/64] w-[7.8cqw]">
+      <img
+        src="/sprites/guitar/guitarNote_SP_StrumCap.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <img
+        src="/sprites/guitar/guitarNote_SP_Body12.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <div
+        className="absolute inset-0 mix-blend-multiply"
+        style={{
+          backgroundColor: noteColor,
+          maskImage: "url(/sprites/guitar/guitarNote_SP_Body12.png)",
+          WebkitMaskImage: "url(/sprites/guitar/guitarNote_SP_Body12.png)",
+          maskRepeat: "no-repeat",
+          maskSize: "contain",
+          maskPosition: "center",
+        }}
+      />
+      <img
+        src="/sprites/guitar/guitarNote_SP_Base12.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-contain"
+      />
+      <div
+        className="absolute inset-0 mix-blend-multiply"
+        style={{
+          backgroundColor: baseColor,
+          maskImage: "url(/sprites/guitar/guitarNote_SP_Base12.png)",
+          WebkitMaskImage: "url(/sprites/guitar/guitarNote_SP_Base12.png)",
           maskRepeat: "no-repeat",
           maskSize: "contain",
           maskPosition: "center",
