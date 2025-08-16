@@ -255,20 +255,13 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
       )}
 
       {strikerHitFLame && (
-        <>
-          <img
-            src={`/sprites/other/spr_hitflames_strip16_3.png`}
-            alt=""
-            className="absolute bottom-[50%] left-0 h-full w-full scale-200 object-contain opacity-35"
-          />
-          <div
-            className="absolute bottom-[50%] left-0 h-full w-full scale-200 opacity-85 mix-blend-overlay brightness-105"
-            style={{
-              backgroundColor: otherColors.striker_hit_flame,
-              ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
-            }}
-          />
-        </>
+        <div
+          className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-screen saturate-200"
+          style={{
+            backgroundColor: otherColors.striker_hit_flame,
+            ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
+          }}
+        />
       )}
     </>
   );
