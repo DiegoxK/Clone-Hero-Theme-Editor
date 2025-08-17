@@ -11,6 +11,10 @@ export default function BottomOptions() {
   const strikerHoldSpark = useEffectsStore((state) => state.strikerHoldSpark);
   const noteParticles = useEffectsStore((state) => state.noteParticles);
   const toggleStarPower = useEffectsStore((state) => state.toggleStarPower);
+  const strikerHitFlameOpen = useEffectsStore(
+    (state) => state.strikerHitFlameOpen,
+  );
+
   const toggleStrikerHitFlame = useEffectsStore(
     (state) => state.toggleStrikerHitFlame,
   );
@@ -19,6 +23,9 @@ export default function BottomOptions() {
   );
   const toggleNoteParticles = useEffectsStore(
     (state) => state.toggleNoteParticles,
+  );
+  const toggleStrikerHitFlameOpen = useEffectsStore(
+    (state) => state.toggleStrikerHitFlameOpen,
   );
 
   const strikerState = useAssetStore((state) => state.strikerState);
@@ -67,6 +74,20 @@ export default function BottomOptions() {
         />
         <Label className="cursor-pointer" htmlFor="note-particles-switch">
           Note Particles
+        </Label>
+      </div>
+      <div className="flex items-center gap-2">
+        <Switch
+          id="striker-hit-flame-open-switch"
+          disabled={strikerState !== "open"}
+          checked={strikerHitFlameOpen}
+          onCheckedChange={toggleStrikerHitFlameOpen}
+        />
+        <Label
+          className="cursor-pointer"
+          htmlFor="striker-hit-flame-open-switch"
+        >
+          Striker Hit Flame Open
         </Label>
       </div>
     </div>

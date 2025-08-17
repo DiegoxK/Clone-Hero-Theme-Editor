@@ -5,10 +5,12 @@ type EffectsState = {
   strikerHitFLame: boolean;
   strikerHoldSpark: boolean;
   noteParticles: boolean;
+  strikerHitFlameOpen: boolean;
   toggleStarPower: () => void;
   toggleStrikerHitFlame: () => void;
   toggleStrikerHoldSpark: () => void;
   toggleNoteParticles: () => void;
+  toggleStrikerHitFlameOpen: () => void;
 };
 
 export const useEffectsStore = create<EffectsState>((set) => ({
@@ -16,6 +18,7 @@ export const useEffectsStore = create<EffectsState>((set) => ({
   strikerHitFLame: false,
   strikerHoldSpark: false,
   noteParticles: false,
+  strikerHitFlameOpen: false,
 
   toggleStarPower: () =>
     set((state) => ({
@@ -32,5 +35,9 @@ export const useEffectsStore = create<EffectsState>((set) => ({
   toggleNoteParticles: () =>
     set((state) => ({
       noteParticles: !state.noteParticles,
+    })),
+  toggleStrikerHitFlameOpen: () =>
+    set((state) => ({
+      strikerHitFlameOpen: !state.strikerHitFlameOpen,
     })),
 }));

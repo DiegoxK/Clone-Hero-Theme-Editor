@@ -33,8 +33,12 @@ const createMaskStyle = (imageUrl: string) => ({
 
 const Strikers = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const otherColors = useThemeStore((state) => state.theme.other);
   const cycleStrikerState = useAssetStore((state) => state.cycleStrikerState);
   const strikerState = useAssetStore((state) => state.strikerState);
+  const strikerHitFlameOpen = useEffectsStore(
+    (state) => state.strikerHitFlameOpen,
+  );
 
   const strikerData = STRIKER_MAPPING.map((striker) => {
     const colorName = striker.name;
@@ -61,6 +65,24 @@ const Strikers = () => {
           <Striker key={striker.position} state={strikerState} {...striker} />
         ))}
       </div>
+      {strikerHitFlameOpen && (
+        <>
+          <div
+            className="absolute bottom-[-37%] left-[50%] h-full w-[24.5cqw] -translate-x-1/2 scale-200 opacity-70 mix-blend-screen"
+            style={{
+              backgroundColor: otherColors.striker_hit_flame_open,
+              ...createMaskStyle(`/sprites/guitar/spr_open_note_hit.png`),
+            }}
+          />
+          <div
+            className="absolute bottom-[-35.5%] left-[50%] h-full w-[19.6cqw] -translate-x-1/2 scale-x-200 scale-y-400 opacity-70 mix-blend-screen"
+            style={{
+              backgroundColor: otherColors.striker_hit_flame_open,
+              ...createMaskStyle(`/sprites/guitar/spr_open_note_hitflame.png`),
+            }}
+          />
+        </>
+      )}
       <div
         title="Strikers"
         className="absolute right-[30.5%] bottom-[8%] z-10 h-[3.5cqw] w-[39cqw] cursor-pointer"
@@ -169,9 +191,13 @@ const StrikerPressed = ({ position, baseColor, headLight }: StrikerProps) => (
 
 const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
   const otherColors = useThemeStore((state) => state.theme.other);
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
   const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
   const strikerHoldSpark = useEffectsStore((state) => state.strikerHoldSpark);
   const noteParticles = useEffectsStore((state) => state.noteParticles);
+  const strikerHitFlameOpen = useEffectsStore(
+    (state) => state.strikerHitFlameOpen,
+  );
 
   return (
     <>
@@ -232,7 +258,9 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
       <div
         className="absolute bottom-[18%] left-0 h-full w-full mix-blend-screen brightness-110"
         style={{
-          backgroundColor: ringColor,
+          backgroundColor: strikerHitFlameOpen
+            ? guitarColors.striker_head_light_open
+            : ringColor,
           ...createMaskStyle(`/sprites/guitar/striker_HeadGlow${position}.png`),
         }}
       />
