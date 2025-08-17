@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Theme } from "@/lib/default-theme";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 
 const MULTIPLIER_DATA = [
   {
@@ -35,6 +36,7 @@ const MULTIPLIER_DATA = [
 
 const Multiplier = () => {
   const otherColors = useThemeStore((state) => state.theme.other);
+  const starPower = useEffectsStore((state) => state.starPower);
   const [currentLevel, setCurrentLevel] = useState(4);
 
   const handleCycleMultiplier = () => {
@@ -78,7 +80,9 @@ const Multiplier = () => {
           <div
             className="absolute inset-0"
             style={{
-              backgroundColor: currentGlowColor,
+              backgroundColor: starPower
+                ? otherColors.combo_sp_active_glow
+                : currentGlowColor,
               maskImage: `url(${levelData.glowSprite})`,
               WebkitMaskImage: `url(${levelData.glowSprite})`,
               maskRepeat: "no-repeat",
@@ -94,7 +98,9 @@ const Multiplier = () => {
           <div
             className="absolute inset-0 mix-blend-overlay"
             style={{
-              backgroundColor: currentColor,
+              backgroundColor: starPower
+                ? otherColors.combo_sp_active
+                : currentColor,
               maskImage: `url(${levelData.numberSprite})`,
               WebkitMaskImage: `url(${levelData.numberSprite})`,
               maskRepeat: "no-repeat",
