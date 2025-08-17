@@ -1,3 +1,4 @@
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 export default function Particles() {
@@ -18,6 +19,8 @@ export default function Particles() {
 
 function Particle({ size, x, y }: { size: number; x: number; y: number }) {
   const otherColors = useThemeStore((state) => state.theme.other);
+  const starPower = useEffectsStore((state) => state.starPower);
+
   return (
     <div
       className="absolute aspect-square"
@@ -31,7 +34,9 @@ function Particle({ size, x, y }: { size: number; x: number; y: number }) {
       <div
         className="absolute inset-0 h-full w-full object-contain mix-blend-multiply brightness-110"
         style={{
-          backgroundColor: otherColors.striker_hit_particles,
+          backgroundColor: starPower
+            ? otherColors.striker_hit_particles_sp_active
+            : otherColors.striker_hit_particles,
           maskImage: `url(/sprites/other/note_Particle.png)`,
           WebkitMaskImage: `url(/sprites/other/note_Particle.png)`,
           maskRepeat: "no-repeat",

@@ -190,6 +190,7 @@ const StrikerPressed = ({ position, baseColor, headLight }: StrikerProps) => (
 );
 
 const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
+  const starPower = useEffectsStore((state) => state.starPower);
   const otherColors = useThemeStore((state) => state.theme.other);
   const guitarColors = useThemeStore((state) => state.theme.guitar);
   const strikerHitFLame = useEffectsStore((state) => state.strikerHitFLame);
@@ -286,7 +287,9 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
         <div
           className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-screen saturate-200"
           style={{
-            backgroundColor: otherColors.striker_hit_flame,
+            backgroundColor: starPower
+              ? otherColors.striker_hit_flame_sp_active
+              : otherColors.striker_hit_flame,
             ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
           }}
         />
