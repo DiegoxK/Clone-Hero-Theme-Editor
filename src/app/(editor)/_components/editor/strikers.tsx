@@ -32,6 +32,7 @@ const createMaskStyle = (imageUrl: string) => ({
 });
 
 const Strikers = () => {
+  const starPower = useEffectsStore((state) => state.starPower);
   const guitarColors = useThemeStore((state) => state.theme.guitar);
   const otherColors = useThemeStore((state) => state.theme.other);
   const cycleStrikerState = useAssetStore((state) => state.cycleStrikerState);
@@ -70,14 +71,18 @@ const Strikers = () => {
           <div
             className="absolute bottom-[-37%] left-[50%] h-full w-[24.5cqw] -translate-x-1/2 scale-200 opacity-70 mix-blend-screen"
             style={{
-              backgroundColor: otherColors.striker_hit_flame_open,
+              backgroundColor: starPower
+                ? otherColors.striker_hit_flame_sp_active
+                : otherColors.striker_hit_flame_open,
               ...createMaskStyle(`/sprites/guitar/spr_open_note_hit.png`),
             }}
           />
           <div
             className="absolute bottom-[-35.5%] left-[50%] h-full w-[19.6cqw] -translate-x-1/2 scale-x-200 scale-y-400 opacity-70 mix-blend-screen"
             style={{
-              backgroundColor: otherColors.striker_hit_flame_open,
+              backgroundColor: starPower
+                ? otherColors.striker_hit_flame_sp_active
+                : otherColors.striker_hit_flame_open,
               ...createMaskStyle(`/sprites/guitar/spr_open_note_hitflame.png`),
             }}
           />

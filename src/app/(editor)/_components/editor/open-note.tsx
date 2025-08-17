@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 export default function OpenNote() {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const starPower = useEffectsStore((state) => state.starPower);
 
   return (
     <div className="absolute bottom-[33.5%] left-[50%] aspect-[334/64] w-[24cqw] -translate-x-1/2">
@@ -20,7 +22,9 @@ export default function OpenNote() {
       <div
         className="absolute inset-0 mix-blend-overlay"
         style={{
-          backgroundColor: guitarColors.note_open,
+          backgroundColor: starPower
+            ? guitarColors.note_sp_active
+            : guitarColors.note_open,
           maskImage: "url(/sprites/guitar/guitarNote_Open_Body1.png)",
           WebkitMaskImage: "url(/sprites/guitar/guitarNote_Open_Body1.png)",
           maskRepeat: "no-repeat",

@@ -1,8 +1,11 @@
 "use client";
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 
 const OpenSustain = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const starPower = useEffectsStore((state) => state.starPower);
+
   return (
     <div
       className="absolute inset-0"
@@ -20,7 +23,13 @@ const OpenSustain = () => {
           transform: "rotateX(60deg) translateZ(-13cqw) translateY(-131cqw)",
         }}
       >
-        <SustainVisual color={guitarColors.sustain_open} />
+        <SustainVisual
+          color={
+            starPower
+              ? guitarColors.sustain_sp_active
+              : guitarColors.sustain_open
+          }
+        />
       </div>
     </div>
   );
