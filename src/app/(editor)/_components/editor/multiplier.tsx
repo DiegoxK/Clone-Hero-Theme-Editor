@@ -128,7 +128,9 @@ const Multiplier = () => {
         <div
           className="absolute inset-0 mix-blend-multiply"
           style={{
-            backgroundColor: currentColor,
+            backgroundColor: starPower
+              ? otherColors.combo_sp_active
+              : currentColor,
             maskImage: "url(/sprites/other/dotrow_1.png)",
             WebkitMaskImage: "url(/sprites/other/dotrow_1.png)",
             maskRepeat: "no-repeat",
