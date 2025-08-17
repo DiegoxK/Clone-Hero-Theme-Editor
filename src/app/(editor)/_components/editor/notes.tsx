@@ -42,7 +42,11 @@ const Notes = () => {
               noteColor={
                 starPower ? guitarColors.note_sp_active : data.noteColor
               }
-              baseColor={guitarColors.note_anim_sp_phrase}
+              baseColor={
+                starPower
+                  ? guitarColors.note_anim_sp_phrase_active
+                  : guitarColors.note_anim_sp_phrase
+              }
             />
           ))}
         </div>
