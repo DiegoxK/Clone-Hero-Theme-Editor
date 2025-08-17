@@ -12,6 +12,7 @@ import NoteSustains from "./_components/editor/note-sustains";
 import Multiplier from "./_components/editor/multiplier";
 import LoadColorsButton from "./_components/load-colors-button";
 import BottomOptions from "./_components/layout/bottom-options";
+import HighwayGlow from "./_components/editor/highway-glow";
 
 export default function Editor() {
   return (
@@ -28,6 +29,7 @@ export default function Editor() {
           <Multiplier />
           <Sidebars />
           <PowerMetter />
+          <HighwayGlow />
           <NoteSustains />
           <Notes />
           <Strikers />
