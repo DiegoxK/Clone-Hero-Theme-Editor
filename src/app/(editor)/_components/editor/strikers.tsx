@@ -271,7 +271,9 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
           <div
             className="absolute bottom-[42%] left-[-3%] h-full w-full scale-150 opacity-50 blur-sm"
             style={{
-              backgroundColor: otherColors.striker_hold_spark,
+              backgroundColor: starPower
+                ? otherColors.striker_hold_spark_sp_active
+                : otherColors.striker_hold_spark,
               ...createMaskStyle(`/sprites/other/heldflames-color_10.png`),
             }}
           />
