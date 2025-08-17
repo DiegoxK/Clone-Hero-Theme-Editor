@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import type { Theme } from "@/lib/default-theme";
 
@@ -13,6 +14,7 @@ const SUSTAIN_MAPPING = [
 
 const NoteSustains = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const starPower = useEffectsStore((state) => state.starPower);
 
   const sustainData = SUSTAIN_MAPPING.map((sustain, index) => {
     const colorKey = `sustain_${sustain.name}` as keyof Theme["guitar"];
@@ -40,7 +42,10 @@ const NoteSustains = () => {
       >
         <div className="flex h-full w-full justify-center gap-x-[6.5cqw]">
           {sustainData.map((data) => (
-            <SustainVisual key={data.key} color={data.color} />
+            <SustainVisual
+              key={data.key}
+              color={starPower ? guitarColors.sustain_sp_active : data.color}
+            />
           ))}
         </div>
       </div>

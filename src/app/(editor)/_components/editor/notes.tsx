@@ -2,6 +2,7 @@
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { useAssetStore } from "@/hooks/stores/use-asset-store";
 import { type Theme } from "@/lib/default-theme";
+import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 
 const NOTE_MAPPING = [
   { name: "green", position: 1 },
@@ -13,6 +14,7 @@ const NOTE_MAPPING = [
 
 const Notes = () => {
   const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const starPower = useEffectsStore((state) => state.starPower);
 
   const noteState = useAssetStore((state) => state.noteState);
   const cycleNoteState = useAssetStore((state) => state.cycleNoteState);
@@ -37,7 +39,9 @@ const Notes = () => {
           {noteData.map((data) => (
             <SPNote
               key={data.key}
-              noteColor={data.noteColor}
+              noteColor={
+                starPower ? guitarColors.note_sp_active : data.noteColor
+              }
               baseColor={guitarColors.note_anim_sp_phrase}
             />
           ))}
@@ -47,8 +51,12 @@ const Notes = () => {
           {noteData.map((data) => (
             <Note
               key={data.key}
-              noteColor={data.noteColor}
-              animColor={data.animColor}
+              noteColor={
+                starPower ? guitarColors.note_sp_active : data.noteColor
+              }
+              animColor={
+                starPower ? guitarColors.note_anim_sp_active : data.animColor
+              }
             />
           ))}
         </div>
