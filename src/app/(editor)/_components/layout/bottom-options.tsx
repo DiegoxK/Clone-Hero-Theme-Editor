@@ -31,7 +31,7 @@ export default function BottomOptions() {
   const strikerState = useAssetStore((state) => state.strikerState);
 
   return (
-    <div className="flex gap-4">
+    <div className="flex w-full justify-center gap-4">
       <div className="flex items-center gap-2">
         <Switch
           id="star-power-switch"
