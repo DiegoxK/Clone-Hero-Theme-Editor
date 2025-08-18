@@ -1,4 +1,6 @@
-import { ChevronDown } from "lucide-react";
+"use client";
+
+import { Brush, ChevronDown, CircleQuestionMark, Pipette } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -10,7 +12,20 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { useThemeStore } from "@/hooks/stores/use-theme-store";
+import { HexColorInput } from "@/components/ui/hex-color-input";
+import { ColorPickerPopover } from "@/components/ui/color-picker-popover";
+import { EyeDropperButton } from "@/components/ui/eye-dropper-button";
+
 export default function Sidebar() {
+  const guitarColors = useThemeStore((state) => state.theme.guitar);
+  const updateColor = useThemeStore((state) => state.updateColor);
+
   return (
     <aside className="flex w-94 flex-col border-r">
       <div className="border-b p-4">
@@ -28,7 +43,7 @@ export default function Sidebar() {
           <TabsTrigger value="others">Others</TabsTrigger>
         </TabsList>
 
-        <Separator className="bg-border my-2" />
+        <Separator className="bg-border my-1" />
 
         <TabsContent
           value="guitar"
@@ -36,6 +51,60 @@ export default function Sidebar() {
         >
           <Accordion type="multiple">
             <AccordionItem value="item-1">
+              <AccordionTrigger>Note Gems</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex items-center gap-1 text-sm">
+                  <span> Green Note</span>
+                  <Popover>
+                    <PopoverTrigger>
+                      <CircleQuestionMark className="size-4 cursor-pointer opacity-50" />
+                    </PopoverTrigger>
+                    <PopoverContent
+                      className="bg-popover/50 flex w-auto flex-col gap-4 rounded-lg backdrop-blur-sm"
+                      side="right"
+                      align="start"
+                    >
+                      Main color of the green gem.
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ColorPickerPopover section="guitar" colorKey="note_green" />
+                  <HexColorInput
+                    className="h-8.5 rounded-lg"
+                    value={guitarColors.note_green}
+                    onChange={(newColor) => {
+                      updateColor("guitar", "note_green", newColor);
+                    }}
+                  />
+                  <EyeDropperButton section="guitar" colorKey="note_green" />
+                </div>
+                <div className="flex items-center gap-1 text-sm">
+                  <span> Red Note</span>
+                  <Popover>
+                    <PopoverTrigger>
+                      <CircleQuestionMark className="size-4 cursor-pointer opacity-50" />
+                    </PopoverTrigger>
+                    <PopoverContent
+                      className="bg-popover/10 flex w-auto flex-col gap-4 rounded-lg backdrop-blur-sm"
+                      side="right"
+                      align="start"
+                    >
+                      Main color of the red gem.
+                    </PopoverContent>
+                  </Popover>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="size-8 flex-shrink-0 rounded-lg bg-red-200" />
+                  <Input className="h-8" />
+                  <Button className="size-8 rounded-lg" size="icon">
+                    <Brush />
+                  </Button>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2">
               <AccordionTrigger>Notes</AccordionTrigger>
               <AccordionContent>
                 <div className="flex items-center gap-3">
@@ -52,38 +121,6 @@ export default function Sidebar() {
                     <ChevronDown />
                   </Button>
                 </div>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Glow</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that match the other
-                aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Fires</AccordionTrigger>
-              <AccordionContent>
-                Yes. By making the TabsContent a flex item that grows to fill
-                all available space, the overflow property now works correctly
-                on it. The long content below will now be scrollable while the
-                triggers above remain fixed. Yes. By making the TabsContent a
-                flex item that grows to fill all available space, the overflow
-                property now works correctly on it. The long content below will
-                now be scrollable while the triggers above remain fixed. Yes. By
-                making the TabsContent a flex item that grows to fill all
-                available space, the overflow property now works correctly on
-                it. The long content below will now be scrollable while the
-                triggers above remain fixed. Yes. By making the TabsContent a
-                flex item that grows to fill all available space, the overflow
-                property now works correctly on it. The long content below will
-                now be scrollable while the triggers above remain fixed.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Other</AccordionTrigger>
-              <AccordionContent>
-                More Content to cause overflow
               </AccordionContent>
             </AccordionItem>
           </Accordion>
