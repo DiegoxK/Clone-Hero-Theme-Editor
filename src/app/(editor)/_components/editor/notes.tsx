@@ -1,4 +1,5 @@
 "use client";
+
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { useAssetStore } from "@/hooks/stores/use-asset-store";
 import { type Theme } from "@/lib/default-theme";
@@ -40,7 +41,7 @@ const Notes = () => {
             <SPNote
               key={data.key}
               noteColor={
-                starPower ? guitarColors.note_sp_active : data.noteColor
+                starPower ? guitarColors.note_sp_phrase_active : data.noteColor
               }
               baseColor={
                 starPower
