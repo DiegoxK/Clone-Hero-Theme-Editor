@@ -7,7 +7,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
   title: "Clone hero Theme editor",
-  description: "Develop by Synthcode",
+  description: "Developed by SynthCode",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
