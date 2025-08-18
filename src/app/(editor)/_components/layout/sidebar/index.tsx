@@ -14,7 +14,7 @@ import { ColorRow } from "./_components/color-row";
 
 export default function Sidebar() {
   return (
-    <aside className="flex w-94 flex-col border-r">
+    <aside className="flex w-94 shrink-0 flex-col border-r">
       <div className="border-b p-4">
         <div className="flex gap-4">
           <h2>

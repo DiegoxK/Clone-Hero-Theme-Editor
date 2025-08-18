@@ -20,8 +20,8 @@ export default function Editor() {
       <div className="flex border-b p-3">
         <LoadColorsButton />
       </div>
-      <div className="flex grow items-center justify-center overflow-hidden">
-        <div className="[container-type:inline-size] relative w-full">
+      <div className="flex grow items-center justify-center overflow-hidden bg-[#181825]">
+        <div className="[container-type:inline-size] relative aspect-video w-full overflow-hidden">
           <BgImage />
           <Highway />
           <GuitarStrings />
