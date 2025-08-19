@@ -1,4 +1,10 @@
+"use client";
+
+import { useAssetStore } from "@/hooks/stores/use-asset-store";
+
 const Highway = () => {
+  const highwayUrl = useAssetStore((state) => state.highwayUrl);
+
   return (
     <div
       className="absolute inset-0"
@@ -8,8 +14,8 @@ const Highway = () => {
       }}
     >
       <img
-        src="/defaults/highway.png"
-        alt=""
+        src={highwayUrl}
+        alt="Highway"
         className="absolute bottom-0 left-1/2 -translate-x-1/2 mask-t-from-90%"
         style={{
           width: "60%",
