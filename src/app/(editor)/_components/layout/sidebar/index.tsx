@@ -15,7 +15,7 @@ import { ColorRow } from "./_components/color-row";
 export default function Sidebar() {
   return (
     <aside className="flex w-94 shrink-0 flex-col border-r">
-      <div className="border-b p-4">
+      <div className="border-b p-3.5">
         <div className="flex gap-4">
           <h2>
             Default theme <ChevronDown size={16} className="inline" />
