@@ -20,7 +20,7 @@ export const useThemeStore = create<ThemeState>((set) => ({
         [section]: {
           ...state.theme[section],
 
-          [key]: value,
+          [key]: value.toUpperCase(),
         },
       },
     })),
