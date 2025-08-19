@@ -6,6 +6,15 @@ div {
   user-select: none;
 }
 
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+::-moz-selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -29,7 +38,7 @@ div {
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(21.552% 0.02545 284.059);
+  --background: oklch(26.314% 0.02794 284.313);
   --foreground: oklch(0.8787 0.0426 272.2767);
   --card: oklch(0.2429 0.0304 283.911);
   --card-foreground: oklch(0.8787 0.0426 272.2767);
