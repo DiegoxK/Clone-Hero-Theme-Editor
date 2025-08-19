@@ -10,9 +10,9 @@ import OpenNote from "./_components/editor/open-note";
 import OpenSustain from "./_components/editor/open-sustain";
 import NoteSustains from "./_components/editor/note-sustains";
 import Multiplier from "./_components/editor/multiplier";
-import BottomOptions from "./_components/layout/bottom-options";
+import BottomOptions from "./_components/layout/bottom-bar";
 import HighwayGlow from "./_components/editor/highway-glow";
-import TopOptions from "./_components/layout/top-options";
+import TopOptions from "./_components/layout/top-bar";
 
 export default function Editor() {
   return (

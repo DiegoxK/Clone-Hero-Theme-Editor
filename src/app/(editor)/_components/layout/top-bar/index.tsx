@@ -1,5 +1,5 @@
-import LoadColorsButton from "../load-colors-button";
-import { ExportDialog } from "../export-dialog";
+import LoadColorsButton from "./_components/load-colors-button";
+import { ExportDialog } from "./_components/export-dialog";
 import { Button } from "@/components/ui/button";
 import { ImageDown, Images } from "lucide-react";
 
