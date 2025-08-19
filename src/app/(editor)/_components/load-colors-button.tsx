@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { parseINIString } from "@/lib/ini-utils";
 import { useRef } from "react";
+import { FileDown } from "lucide-react";
 
 export default function LoadColorsButton() {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -40,8 +41,8 @@ export default function LoadColorsButton() {
 
   return (
     <>
-      <Button size="sm" onClick={handleUploadClick}>
-        Load colors.ini
+      <Button variant="ghost" size="sm" onClick={handleUploadClick}>
+        <FileDown /> Import Theme.ini
       </Button>
       <input
         type="file"
