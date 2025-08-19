@@ -37,7 +37,7 @@ export const ColorRow = ({
   };
 
   return (
-    <div className="flex flex-col gap-2 py-2">
+    <div className="flex flex-col gap-2 py-0.5">
       <div className="flex items-center gap-1 text-sm">
         <span>{label}</span>
         <Popover>

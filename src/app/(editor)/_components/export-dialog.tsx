@@ -44,8 +44,9 @@ export const ExportDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost">
-          <FileUp className="mr-2 h-4 w-4" /> Copy / Download .ini data
+        <Button variant="ghost" size="sm">
+          <FileUp />
+          Download
         </Button>
       </DialogTrigger>
 

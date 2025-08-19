@@ -42,7 +42,7 @@ export default function LoadColorsButton() {
   return (
     <>
       <Button variant="ghost" size="sm" onClick={handleUploadClick}>
-        <FileDown /> Import Theme.ini
+        <FileDown /> Import
       </Button>
       <input
         type="file"
