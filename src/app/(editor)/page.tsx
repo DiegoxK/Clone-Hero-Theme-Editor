@@ -10,15 +10,15 @@ import OpenNote from "./_components/editor/open-note";
 import OpenSustain from "./_components/editor/open-sustain";
 import NoteSustains from "./_components/editor/note-sustains";
 import Multiplier from "./_components/editor/multiplier";
-import LoadColorsButton from "./_components/load-colors-button";
 import BottomOptions from "./_components/layout/bottom-options";
 import HighwayGlow from "./_components/editor/highway-glow";
+import TopOptions from "./_components/layout/top-options";
 
 export default function Editor() {
   return (
     <main className="flex grow flex-col justify-between">
-      <div className="flex border-b p-3">
-        <LoadColorsButton />
+      <div className="border-b p-2">
+        <TopOptions />
       </div>
       <div className="flex grow items-center justify-center overflow-hidden bg-[#181825]">
         <div className="[container-type:inline-size] relative aspect-video w-full overflow-hidden">
