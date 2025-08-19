@@ -67,9 +67,7 @@ export const ExportDialog = () => {
           <AlertTriangle className="h-4 w-4" />
           <AlertTitle>Browser Security Notice</AlertTitle>
           <AlertDescription>
-            When downloading, your browser may show a security warning. This is
-            a standard precaution. You can safely choose &quot;Keep&quot; to
-            save your theme file.
+            When downloading, your browser may show a security warning.
           </AlertDescription>
         </Alert>
         <DialogFooter className="gap-2 sm:justify-start">
