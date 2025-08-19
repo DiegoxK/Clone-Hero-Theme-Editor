@@ -6,9 +6,13 @@ export type NoteState = "default" | "sp";
 type AssetStoreState = {
   strikerState: StrikerState;
   noteState: NoteState;
+  backgroundUrl: string;
+  highwayUrl: string;
 
   cycleStrikerState: () => void;
   cycleNoteState: () => void;
+  setBackgroundUrl: (url: string) => void;
+  setHighwayUrl: (url: string) => void;
 };
 
 const STRIKER_CYCLE_ORDER: StrikerState[] = ["default", "pressed", "open"];
@@ -17,6 +21,8 @@ const NOTE_CYCLE_ORDER: NoteState[] = ["default", "sp"];
 export const useAssetStore = create<AssetStoreState>((set) => ({
   strikerState: "default",
   noteState: "default",
+  backgroundUrl: "/defaults/background.jpg",
+  highwayUrl: "/defaults/highway.png",
 
   cycleStrikerState: () =>
     set((state) => {
@@ -31,4 +37,6 @@ export const useAssetStore = create<AssetStoreState>((set) => ({
       const nextIndex = (currentIndex + 1) % NOTE_CYCLE_ORDER.length;
       return { noteState: NOTE_CYCLE_ORDER[nextIndex] };
     }),
+  setBackgroundUrl: (url) => set({ backgroundUrl: url }),
+  setHighwayUrl: (url) => set({ highwayUrl: url }),
 }));
