@@ -29,7 +29,7 @@ export const ResetButton = () => {
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button variant="ghost" size="sm" aria-label="Reset all settings">
-          <RotateCcw className="h-4 w-4" />
+          <RotateCcw className="h-4 w-4" /> Reset
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

@@ -28,7 +28,7 @@ export const ExportDialog = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "colors.ini";
+    a.download = "CustomTheme.ini";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

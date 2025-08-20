@@ -12,30 +12,36 @@ export default function TopOptions() {
   const setHighwayUrl = useAssetStore((state) => state.setHighwayUrl);
 
   return (
-    <div className="flex flex-row-reverse gap-2">
-      <ExportDialog />
-      <div className="border-s" />
-      <LoadColorsButton />
-      <div className="border-s" />
-      <ImageUploaderButton
-        variant="ghost"
-        size="sm"
-        onImageUpload={setHighwayUrl}
-      >
-        <ImageDown className="mr-2 h-4 w-4" /> Highway
-      </ImageUploaderButton>
+    <div className="flex flex-row-reverse justify-between">
+      <div className="flex flex-row-reverse gap-2">
+        <div className="border-s" />
+        <ImageUploaderButton
+          variant="ghost"
+          size="sm"
+          onImageUpload={setHighwayUrl}
+        >
+          <ImageDown className="mr-2 h-4 w-4" /> Highway
+        </ImageUploaderButton>
 
-      <div className="border-s" />
+        <div className="border-s" />
 
-      <ImageUploaderButton
-        variant="ghost"
-        size="sm"
-        onImageUpload={setBackgroundUrl}
-      >
-        <Images className="mr-2 h-4 w-4" /> Background
-      </ImageUploaderButton>
-      <div className="border-s" />
-      <ResetButton />
+        <ImageUploaderButton
+          variant="ghost"
+          size="sm"
+          onImageUpload={setBackgroundUrl}
+        >
+          <Images className="mr-2 h-4 w-4" /> Background
+        </ImageUploaderButton>
+        <div className="border-s" />
+      </div>
+      <div className="flex gap-2">
+        <ResetButton />
+        <div className="border-s" />
+        <LoadColorsButton />
+        <div className="border-s" />
+        <ExportDialog />
+        <div className="border-s" />
+      </div>
     </div>
   );
 }
