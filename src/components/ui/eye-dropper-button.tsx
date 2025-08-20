@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Pipette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
-import { type Theme } from "@/lib/default-theme";
+import { type Theme } from "@/lib/presets/index";
 import { cn } from "@/lib/utils";
 
 interface EyeDropperButtonProps extends React.ComponentProps<typeof Button> {

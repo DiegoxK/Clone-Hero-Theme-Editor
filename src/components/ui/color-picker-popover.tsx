@@ -7,7 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
-import { type Theme } from "@/lib/default-theme";
+import { type Theme } from "@/lib/presets/index";
 import { HexColorPicker } from "react-colorful";
 
 type ColorPickerPopoverProps = {

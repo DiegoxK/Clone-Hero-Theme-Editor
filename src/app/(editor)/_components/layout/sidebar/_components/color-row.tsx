@@ -1,7 +1,7 @@
 "use client";
 
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
-import { type Theme } from "@/lib/default-theme";
+import { type Theme } from "@/lib/presets/index";
 import { CircleQuestionMark } from "lucide-react";
 import {
   Popover,

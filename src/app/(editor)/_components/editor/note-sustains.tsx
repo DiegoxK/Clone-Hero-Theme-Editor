@@ -2,7 +2,7 @@
 
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
-import type { Theme } from "@/lib/default-theme";
+import type { Theme } from "@/lib/presets/index";
 
 const SUSTAIN_MAPPING = [
   { name: "green" },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Theme } from "@/lib/default-theme";
+import type { Theme } from "@/lib/presets/index";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 

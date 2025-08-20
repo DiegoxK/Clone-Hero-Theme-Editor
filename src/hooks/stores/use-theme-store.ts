@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { type Theme, initialThemeData } from "@/lib/default-theme";
+import { type Theme, initialThemeData } from "@/lib/presets/index";
 
 type ThemeState = {
   theme: Theme;

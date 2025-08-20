@@ -2,7 +2,7 @@
 
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { useAssetStore } from "@/hooks/stores/use-asset-store";
-import { type Theme } from "@/lib/default-theme";
+import { type Theme } from "@/lib/presets/index";
 import { useEffectsStore } from "@/hooks/stores/use-effects-store";
 
 const NOTE_MAPPING = [

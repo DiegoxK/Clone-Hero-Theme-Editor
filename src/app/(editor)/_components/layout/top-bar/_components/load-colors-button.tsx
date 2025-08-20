@@ -1,6 +1,6 @@
 "use client";
 
-import type { Theme } from "@/lib/default-theme";
+import type { Theme } from "@/lib/presets/index";
 import { Button } from "@/components/ui/button";
 import { useThemeStore } from "@/hooks/stores/use-theme-store";
 import { parseINIString } from "@/lib/ini-utils";
