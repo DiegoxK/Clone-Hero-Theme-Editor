@@ -79,7 +79,7 @@ export const ThemeSelector = () => {
               key={preset.name}
               onSelect={() => handleSelectPreset(preset)}
             >
-              <div className="flex items-center gap-2">
+              <div className="mr-4 flex items-center gap-2">
                 <ThemePreview colors={presetPreviewColors} />
                 <span>{preset.name}</span>
               </div>
