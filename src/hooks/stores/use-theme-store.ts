@@ -7,13 +7,13 @@ type ThemeState = {
 
   setTheme: (newTheme: Theme) => void;
   updateColor: (section: keyof Theme, key: string, value: string) => void;
+  reset: () => void;
 };
 
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       theme: initialThemeData,
-
       setTheme: (newTheme) => set({ theme: newTheme }),
 
       updateColor: (section, key, value) =>
@@ -28,6 +28,8 @@ export const useThemeStore = create<ThemeState>()(
             },
           },
         })),
+
+      reset: () => set({ theme: initialThemeData }),
     }),
     {
       name: "clone-hero-theme-storage",

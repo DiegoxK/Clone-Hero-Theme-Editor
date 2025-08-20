@@ -14,6 +14,14 @@ type AssetStoreState = {
   cycleNoteState: () => void;
   setBackgroundUrl: (url: string) => void;
   setHighwayUrl: (url: string) => void;
+  reset: () => void;
+};
+
+const initialAssetState = {
+  strikerState: "default" as StrikerState,
+  noteState: "default" as NoteState,
+  backgroundUrl: "/defaults/background.jpg",
+  highwayUrl: "/defaults/highway.png",
 };
 
 const STRIKER_CYCLE_ORDER: StrikerState[] = ["default", "pressed", "open"];
@@ -22,10 +30,7 @@ const NOTE_CYCLE_ORDER: NoteState[] = ["default", "sp"];
 export const useAssetStore = create<AssetStoreState>()(
   persist(
     (set) => ({
-      strikerState: "default",
-      noteState: "default",
-      backgroundUrl: "/defaults/background.jpg",
-      highwayUrl: "/defaults/highway.png",
+      ...initialAssetState,
 
       cycleStrikerState: () =>
         set((state) => {
@@ -42,6 +47,8 @@ export const useAssetStore = create<AssetStoreState>()(
         }),
       setBackgroundUrl: (url) => set({ backgroundUrl: url }),
       setHighwayUrl: (url) => set({ highwayUrl: url }),
+
+      reset: () => set(initialAssetState),
     }),
     {
       name: "clone-hero-asset-storage",
