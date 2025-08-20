@@ -11,16 +11,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { GUITAR_LAYOUT, OTHER_LAYOUT } from "./sidebar-layout";
 import { ColorRow } from "./_components/color-row";
+import { ThemeSelector } from "./_components/theme-selector";
 
 export default function Sidebar() {
   return (
     <aside className="flex w-94 shrink-0 flex-col border-r">
       <div className="border-b p-3">
-        <div className="flex gap-4">
-          <h2>
-            Default theme <ChevronDown size={16} className="inline" />
-          </h2>
-        </div>
+        <ThemeSelector />
       </div>
 
       <Tabs defaultValue="guitar" className="overflow-hidden p-3">
