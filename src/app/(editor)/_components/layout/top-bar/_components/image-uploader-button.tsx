@@ -23,6 +23,7 @@ export const ImageUploaderButton = ({
     const objectUrl = URL.createObjectURL(file);
 
     onImageUpload(objectUrl);
+    event.target.value = "";
   };
 
   const handleClick = () => {
