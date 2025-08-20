@@ -24,7 +24,7 @@ export default function LoadColorsButton() {
         try {
           const parsedData = parseINIString(text);
 
-          setTheme(parsedData as Theme);
+          setTheme(parsedData as Theme, file.name);
         } catch (error) {
           console.error("Failed to parse INI file:", error);
           alert("Error: Could not parse the INI file.");
