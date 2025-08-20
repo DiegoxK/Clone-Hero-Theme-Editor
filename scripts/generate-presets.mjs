@@ -50,11 +50,17 @@ function migrateTheme(parsedPreset, defaultTheme) {
   for (const section in parsedPreset) {
     if (!migratedTheme[section]) continue;
     const sectionMappings = KEY_MAPPINGS[section] || {};
+    for (const key in parsedPreset[section]) {
+      if (!sectionMappings[key] && migratedTheme[section].hasOwnProperty(key)) {
+        migratedTheme[section][key] = parsedPreset[section][key];
+      }
+    }
     for (const oldKey in parsedPreset[section]) {
-      const value = parsedPreset[section][oldKey];
-      const newKey = sectionMappings[oldKey] || oldKey;
-      if (migratedTheme[section].hasOwnProperty(newKey)) {
-        migratedTheme[section][newKey] = value;
+      if (sectionMappings[oldKey]) {
+        const newKey = sectionMappings[oldKey];
+        if (migratedTheme[section].hasOwnProperty(newKey)) {
+          migratedTheme[section][newKey] = parsedPreset[section][oldKey];
+        }
       }
     }
   }
