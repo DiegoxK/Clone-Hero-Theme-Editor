@@ -5,6 +5,7 @@ import { ExportDialog } from "./_components/export-dialog";
 import { ImageDown, Images } from "lucide-react";
 import { ImageUploaderButton } from "./_components/image-uploader-button";
 import { useAssetStore } from "@/hooks/stores/use-asset-store";
+import { ResetButton } from "./_components/reset-button";
 
 export default function TopOptions() {
   const setBackgroundUrl = useAssetStore((state) => state.setBackgroundUrl);
@@ -34,6 +35,7 @@ export default function TopOptions() {
         <Images className="mr-2 h-4 w-4" /> Background
       </ImageUploaderButton>
       <div className="border-s" />
+      <ResetButton />
     </div>
   );
 }
