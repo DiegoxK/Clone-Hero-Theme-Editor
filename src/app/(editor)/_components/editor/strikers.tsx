@@ -194,7 +194,12 @@ const StrikerPressed = ({ position, baseColor, headLight }: StrikerProps) => (
   </>
 );
 
-const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
+const StrikerOpen = ({
+  position,
+  baseColor,
+  ringColor,
+  headLight,
+}: StrikerProps) => {
   const starPower = useEffectsStore((state) => state.starPower);
   const otherColors = useThemeStore((state) => state.theme.other);
   const guitarColors = useThemeStore((state) => state.theme.guitar);
@@ -266,7 +271,7 @@ const StrikerOpen = ({ position, baseColor, ringColor }: StrikerProps) => {
         style={{
           backgroundColor: strikerHitFlameOpen
             ? guitarColors.striker_head_light_open
-            : ringColor,
+            : headLight,
           ...createMaskStyle(`/sprites/guitar/striker_HeadGlow${position}.png`),
         }}
       />
