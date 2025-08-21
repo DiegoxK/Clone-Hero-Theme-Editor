@@ -68,7 +68,13 @@ export const ExportDialog = () => {
           <AlertTriangle className="h-4 w-4" />
           <AlertTitle>Browser Security Notice</AlertTitle>
           <AlertDescription>
-            When downloading, your browser may show a security warning.
+            <p>Your browser may warn about the download. You can:</p>
+            <ul className="list-inside list-disc">
+              <li>Proceed with the download</li>
+              <li>
+                Or copy the text above and save it as an <code>.ini</code> file.
+              </li>
+            </ul>
           </AlertDescription>
         </Alert>
         <DialogFooter className="gap-2 sm:justify-start">
