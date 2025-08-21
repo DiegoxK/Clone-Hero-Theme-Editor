@@ -5,72 +5,27 @@ export const GUITAR_LAYOUT = [
       {
         key: "note_green",
         label: "Green Note",
-        description: "Main color of the green note gem.",
+        description: "Base color of the green note gem.",
       },
       {
         key: "note_anim_green",
-        label: "Green Note (Detail)",
+        label: "Green Note (Highlight)",
         description: "Shine animation color of the green note.",
+      },
+      {
+        key: "sustain_green",
+        label: "Green Trail",
+        description: "Sustain trail color for green notes.",
       },
       {
         key: "note_red",
         label: "Red Note",
-        description: "Main color of the red note gem.",
+        description: "Base color of the red note gem.",
       },
       {
         key: "note_anim_red",
-        label: "Red Note (Detail)",
+        label: "Red Note (Highlight)",
         description: "Shine animation color of the red note.",
-      },
-      {
-        key: "note_yellow",
-        label: "Yellow Note",
-        description: "Main color of the yellow note gem.",
-      },
-      {
-        key: "note_anim_yellow",
-        label: "Yellow Note (Detail)",
-        description: "Shine animation color of the yellow note.",
-      },
-      {
-        key: "note_blue",
-        label: "Blue Note",
-        description: "Main color of the blue note gem.",
-      },
-      {
-        key: "note_anim_blue",
-        label: "Blue Note (Detail)",
-        description: "Shine animation color of the blue note.",
-      },
-      {
-        key: "note_orange",
-        label: "Orange Note",
-        description: "Main color of the orange note gem.",
-      },
-      {
-        key: "note_anim_orange",
-        label: "Orange Note (Detail)",
-        description: "Shine animation color of the orange note.",
-      },
-      {
-        key: "note_open",
-        label: "Open Note",
-        description: "Main color of the open note bar.",
-      },
-      {
-        key: "note_anim_open",
-        label: "Open Note (Detail)",
-        description: "Shine animation color of the open note bar.",
-      },
-    ],
-  },
-  {
-    groupName: "Sustain Trails",
-    colors: [
-      {
-        key: "sustain_green",
-        label: "Green Sustain",
-        description: "Sustain trail color for green notes.",
       },
       {
         key: "sustain_red",
@@ -78,9 +33,29 @@ export const GUITAR_LAYOUT = [
         description: "Sustain trail color for red notes.",
       },
       {
+        key: "note_yellow",
+        label: "Yellow Note",
+        description: "Base color of the yellow note gem.",
+      },
+      {
+        key: "note_anim_yellow",
+        label: "Yellow Note (Highlight)",
+        description: "Shine animation color of the yellow note.",
+      },
+      {
         key: "sustain_yellow",
         label: "Yellow Sustain",
         description: "Sustain trail color for yellow notes.",
+      },
+      {
+        key: "note_blue",
+        label: "Blue Note",
+        description: "Base color of the blue note gem.",
+      },
+      {
+        key: "note_anim_blue",
+        label: "Blue Note (Highlight)",
+        description: "Shine animation color of the blue note.",
       },
       {
         key: "sustain_blue",
@@ -88,9 +63,30 @@ export const GUITAR_LAYOUT = [
         description: "Sustain trail color for blue notes.",
       },
       {
+        key: "note_orange",
+        label: "Orange Note",
+        description: "Base color of the orange note gem.",
+      },
+      {
+        key: "note_anim_orange",
+        label: "Orange Note (Highlight)",
+        description: "Shine animation color of the orange note.",
+      },
+
+      {
         key: "sustain_orange",
         label: "Orange Sustain",
         description: "Sustain trail color for orange notes.",
+      },
+      {
+        key: "note_open",
+        label: "Open Note",
+        description: "Base color of the open note bar.",
+      },
+      {
+        key: "note_anim_open",
+        label: "Open Note (Highlight)",
+        description: "Shine animation color of the open note bar.",
       },
       {
         key: "sustain_open",
@@ -103,34 +99,24 @@ export const GUITAR_LAYOUT = [
     groupName: "Strikers (Fret Buttons)",
     colors: [
       {
-        key: "striker_cover_green",
-        label: "Green Fret (Surface)",
-        description: "Main surface color of the green fret.",
-      },
-      {
-        key: "striker_head_cover_green",
-        label: "Green Fret (Head)",
-        description: "Main color of the green fret striker head.",
-      },
-      {
         key: "striker_base_green",
         label: "Green Fret (Base)",
         description: "Base color of the green fret.",
       },
       {
+        key: "striker_cover_green",
+        label: "Green Fret (Outer Ring)",
+        description: "Color of the green fret's outer ring.",
+      },
+      {
+        key: "striker_head_cover_green",
+        label: "Green Fret (Inner Ring)",
+        description: "Color of the green fret's inner ring.",
+      },
+      {
         key: "striker_head_light_green",
-        label: "Green Fret (Light)",
-        description: "Internal light glow color for the green fret.",
-      },
-      {
-        key: "striker_cover_red",
-        label: "Red Fret (Surface)",
-        description: "Main surface color of the red fret.",
-      },
-      {
-        key: "striker_head_cover_red",
-        label: "Red Fret (Head)",
-        description: "Main color of the red fret striker head.",
+        label: "Green Fret (Pressed Glow)",
+        description: "Internal glow of the green fret when pressed.",
       },
       {
         key: "striker_base_red",
@@ -138,19 +124,19 @@ export const GUITAR_LAYOUT = [
         description: "Base color of the red fret.",
       },
       {
+        key: "striker_cover_red",
+        label: "Red Fret (Outer Ring)",
+        description: "Color of the red fret's outer ring.",
+      },
+      {
+        key: "striker_head_cover_red",
+        label: "Red Fret (Inner Ring)",
+        description: "Color of the red fret's inner ring.",
+      },
+      {
         key: "striker_head_light_red",
-        label: "Red Fret (Light)",
-        description: "Internal light glow color for the red fret.",
-      },
-      {
-        key: "striker_cover_yellow",
-        label: "Yellow Fret (Surface)",
-        description: "Main surface color of the yellow fret.",
-      },
-      {
-        key: "striker_head_cover_yellow",
-        label: "Yellow Fret (Head)",
-        description: "Main color of the yellow fret striker head.",
+        label: "Red Fret (Pressed Glow)",
+        description: "Internal glow of the red fret when pressed.",
       },
       {
         key: "striker_base_yellow",
@@ -158,19 +144,19 @@ export const GUITAR_LAYOUT = [
         description: "Base color of the yellow fret.",
       },
       {
+        key: "striker_cover_yellow",
+        label: "Yellow Fret (Outer Ring)",
+        description: "Color of the yellow fret's outer ring.",
+      },
+      {
+        key: "striker_head_cover_yellow",
+        label: "Yellow Fret (Inner Ring)",
+        description: "Color of the yellow fret's inner ring.",
+      },
+      {
         key: "striker_head_light_yellow",
-        label: "Yellow Fret (Light)",
-        description: "Internal light glow color for the yellow fret.",
-      },
-      {
-        key: "striker_cover_blue",
-        label: "Blue Fret (Surface)",
-        description: "Main surface color of the blue fret.",
-      },
-      {
-        key: "striker_head_cover_blue",
-        label: "Blue Fret (Head)",
-        description: "Main color of the blue fret striker head.",
+        label: "Yellow Fret (Pressed Glow)",
+        description: "Internal glow of the yellow fret when pressed.",
       },
       {
         key: "striker_base_blue",
@@ -178,19 +164,19 @@ export const GUITAR_LAYOUT = [
         description: "Base color of the blue fret.",
       },
       {
+        key: "striker_cover_blue",
+        label: "Blue Fret (Outer Ring)",
+        description: "Color of the blue fret's outer ring.",
+      },
+      {
+        key: "striker_head_cover_blue",
+        label: "Blue Fret (Inner Ring)",
+        description: "Color of the blue fret's inner ring.",
+      },
+      {
         key: "striker_head_light_blue",
-        label: "Blue Fret (Light)",
-        description: "Internal light glow color for the blue fret.",
-      },
-      {
-        key: "striker_cover_orange",
-        label: "Orange Fret (Surface)",
-        description: "Main surface color of the orange fret.",
-      },
-      {
-        key: "striker_head_cover_orange",
-        label: "Orange Fret (Head)",
-        description: "Main color of the orange fret striker head.",
+        label: "Blue Fret (Pressed Glow)",
+        description: "Internal glow of the blue fret when pressed.",
       },
       {
         key: "striker_base_orange",
@@ -198,66 +184,77 @@ export const GUITAR_LAYOUT = [
         description: "Base color of the orange fret.",
       },
       {
+        key: "striker_cover_orange",
+        label: "Orange Fret (Outer Ring)",
+        description: "Color of the orange fret's outer ring.",
+      },
+      {
+        key: "striker_head_cover_orange",
+        label: "Orange Fret (Inner Ring)",
+        description: "Color of the orange fret's inner ring.",
+      },
+      {
         key: "striker_head_light_orange",
-        label: "Orange Fret (Light)",
-        description: "Internal light glow color for the orange fret.",
+        label: "Orange Fret (Pressed Glow)",
+        description: "Internal glow of the orange fret when pressed.",
       },
       {
         key: "striker_head_light_open",
         label: "Open Strum Light",
-        description: "Color of the five strikers when strumming an open note.",
+        description: "Glow of all five frets when strumming an open note.",
       },
     ],
   },
+
   {
-    groupName: "Star Power Notes",
+    groupName: "Star Power",
     colors: [
       {
         key: "note_sp_active",
-        label: "SP Note Color",
+        label: "Note Color",
         description: "Color of regular notes when Star Power is active.",
       },
       {
         key: "note_anim_sp_active",
-        label: "SP Note (Detail)",
-        description: "Animation color for notes when Star Power is active.",
+        label: "Note (Highlight)",
+        description:
+          "Shine animation color of regular notes when Star Power is active.",
       },
       {
         key: "sustain_sp_active",
-        label: "SP Sustain Color",
-        description: "Sustain trail color for notes when Star Power is active.",
+        label: "Trail Color",
+        description: "Sustain trail colors when Star Power is active.",
       },
+    ],
+  },
+  {
+    groupName: "Phrase Notes",
+    colors: [
       {
-        key: "note_sp_phrase",
-        label: "SP Phrase Note (Highlight)",
-        description: "Color of the highlight effect of an SP open star note.",
+        key: "note_sp_phrase_active",
+        label: "Phrase Note (Active)",
+        description: "Color of an star note when Star Power is active.",
       },
       {
         key: "note_anim_sp_phrase",
-        label: "SP Phrase Note (Body)",
-        description: "Color of the bottom part of an SP star note.",
-      },
-      {
-        key: "note_sp_phrase_active",
-        label: "SP Phrase Note (Active)",
-        description: "Color of a star note when Star Power is active.",
+        label: "Bottom Phrase Note",
+        description: "Bottom color of a Phrase Note.",
       },
       {
         key: "note_anim_sp_phrase_active",
-        label: "SP Phrase Note (Active Detail)",
-        description:
-          "Color of the bottom part of an SP star note when SP is active.",
+        label: "Bottom Phrase Note (Active)",
+        description: "Bottom color of a Phrase Note when Star Power is active.",
+      },
+      {
+        key: "note_sp_phrase",
+        label: "Open Phrase Note (Glow)",
+        description: "Glow Color of an Open Phrase Note.",
       },
       {
         key: "sustain_sp_phrase",
-        label: "SP Whammy Sustain",
+        label: "Whammy Sustain (In Game)",
         description:
-          "Sustain trail color for star notes when using the whammy bar.",
-      },
-      {
-        key: "sustain_sp_phrase_active",
-        label: "SP Active Sustain Phrase",
-        description: "Exact effect unknown.",
+          "Trail color of a phrase note when using the whammy bar. (Not visible in the current UI)",
       },
     ],
   },

@@ -45,7 +45,7 @@ export const ColorRow = ({
             <CircleQuestionMark className="size-4 cursor-pointer opacity-50" />
           </PopoverTrigger>
           <PopoverContent
-            className="bg-popover/50 flex w-auto flex-col gap-4 rounded-lg backdrop-blur-sm"
+            className="bg-popover/60 flex flex-col gap-4 rounded-lg backdrop-blur-lg"
             side="right"
             align="start"
           >
