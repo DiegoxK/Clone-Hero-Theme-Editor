@@ -36,9 +36,8 @@ export const ResetButton = () => {
         <AlertDialogHeader>
           <AlertDialogTitle>Reset All Settings?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action will permanently revert all colors, assets, and effects
-            to their original default values. Your current customizations will
-            be lost.
+            This action will revert all colors, assets, and effects to their
+            original default values.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
