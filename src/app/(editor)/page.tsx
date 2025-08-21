@@ -13,33 +13,37 @@ import Multiplier from "./_components/editor/multiplier";
 import BottomOptions from "./_components/layout/bottom-bar";
 import HighwayGlow from "./_components/editor/highway-glow";
 import TopOptions from "./_components/layout/top-bar";
+import { KeyboardShortcuts } from "./_components/keyboard-shortcuts";
 
 export default function Editor() {
   return (
-    <main className="flex grow flex-col justify-between">
-      <div className="border-b p-2">
-        <TopOptions />
-      </div>
-      <div className="flex grow items-center justify-center overflow-hidden bg-[#181825]">
-        <div className="[container-type:inline-size] relative aspect-video w-full overflow-hidden">
-          <BgImage />
-          <Highway />
-          <GuitarStrings />
-          <BeatLines />
-          <Multiplier />
-          <Sidebars />
-          <PowerMetter />
-          <HighwayGlow />
-          <NoteSustains />
-          <Notes />
-          <Strikers />
-          <OpenSustain />
-          <OpenNote />
+    <>
+      <KeyboardShortcuts />
+      <main className="flex grow flex-col justify-between">
+        <div className="border-b p-2">
+          <TopOptions />
         </div>
-      </div>
-      <div className="border-t p-4">
-        <BottomOptions />
-      </div>
-    </main>
+        <div className="flex grow items-center justify-center overflow-hidden bg-[#181825]">
+          <div className="[container-type:inline-size] relative aspect-video w-full overflow-hidden">
+            <BgImage />
+            <Highway />
+            <GuitarStrings />
+            <BeatLines />
+            <Multiplier />
+            <Sidebars />
+            <PowerMetter />
+            <HighwayGlow />
+            <NoteSustains />
+            <Notes />
+            <Strikers />
+            <OpenSustain />
+            <OpenNote />
+          </div>
+        </div>
+        <div className="border-t p-4">
+          <BottomOptions />
+        </div>
+      </main>
+    </>
   );
 }
