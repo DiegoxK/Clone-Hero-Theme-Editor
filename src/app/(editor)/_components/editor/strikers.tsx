@@ -296,15 +296,22 @@ const StrikerOpen = ({
       )}
 
       {strikerHitFLame && (
-        <div
-          className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-screen saturate-200"
-          style={{
-            backgroundColor: starPower
-              ? otherColors.striker_hit_flame_sp_active
-              : otherColors.striker_hit_flame,
-            ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
-          }}
-        />
+        <>
+          <div
+            className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-screen saturate-120"
+            style={{
+              backgroundColor: starPower
+                ? otherColors.striker_hit_flame_sp_active
+                : otherColors.striker_hit_flame,
+              ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
+            }}
+          />
+          <img
+            src={`/sprites/other/spr_hitflames_strip16_3.png`}
+            alt=""
+            className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-darken saturate-160"
+          />
+        </>
       )}
     </>
   );
