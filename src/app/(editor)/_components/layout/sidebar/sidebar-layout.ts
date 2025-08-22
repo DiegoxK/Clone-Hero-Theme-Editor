@@ -270,9 +270,19 @@ export const OTHER_LAYOUT = [
         description: "Color for the 1x multiplier number.",
       },
       {
+        key: "combo_two_glow",
+        label: "2x Multiplier (Glow)",
+        description: "Inner glow color for the 2x multiplier number.",
+      },
+      {
         key: "combo_two",
         label: "2x Multiplier",
         description: "Color for the 2x multiplier number.",
+      },
+      {
+        key: "combo_three_glow",
+        label: "3x Multiplier (Glow)",
+        description: "Inner glow color for the 3x multiplier number.",
       },
       {
         key: "combo_three",
@@ -280,34 +290,24 @@ export const OTHER_LAYOUT = [
         description: "Color for the 3x multiplier number.",
       },
       {
+        key: "combo_four_glow",
+        label: "4x Multiplier (Glow)",
+        description: "Inner glow color for the 4x multiplier number.",
+      },
+      {
         key: "combo_four",
         label: "4x Multiplier",
         description: "Color for the 4x multiplier number.",
       },
       {
-        key: "combo_sp_active",
-        label: "SP Multiplier",
-        description: "Color for the number when Star Power is active.",
-      },
-      {
-        key: "combo_two_glow",
-        label: "2x Multiplier (Glow)",
-        description: "Glow color for the 2x multiplier.",
-      },
-      {
-        key: "combo_three_glow",
-        label: "3x Multiplier (Glow)",
-        description: "Glow color for the 3x multiplier.",
-      },
-      {
-        key: "combo_four_glow",
-        label: "4x Multiplier (Glow)",
-        description: "Glow color for the 4x multiplier.",
-      },
-      {
         key: "combo_sp_active_glow",
         label: "SP Multiplier (Glow)",
-        description: "Glow color when Star Power is active.",
+        description: "Inner glow color when Star Power is active.",
+      },
+      {
+        key: "combo_sp_active",
+        label: "SP Multiplier",
+        description: "Number color when Star Power is active.",
       },
     ],
   },
@@ -322,7 +322,7 @@ export const OTHER_LAYOUT = [
       {
         key: "striker_hit_particles",
         label: "Hit Particles",
-        description: "Color of the particle sparks from a regular note hit.",
+        description: "Color of the particle sparks from regular note hits.",
       },
       {
         key: "striker_hit_flame_open",
@@ -349,21 +349,32 @@ export const OTHER_LAYOUT = [
         label: "SP Sustain Spark",
         description: "Color of sustain sparks when Star Power is active.",
       },
-      {
-        key: "striker_hit_flame_kick",
-        label: "Drum Kick Flame",
-        description:
-          "Color of the effect from hitting a drum kick note. Effect unconfirmed.",
-      },
+      // {
+      //   key: "striker_hit_flame_kick",
+      //   label: "Drum Kick Flame",
+      //   description:
+      //     "Color of the effect from hitting a drum kick note. Effect unconfirmed.",
+      // },
     ],
   },
   {
     groupName: "Star Power Meter & Effects",
     colors: [
       {
+        key: "sp_act_animation",
+        label: "SP Highway Glow",
+        description: "Color of the highway background glow while SP is active.",
+      },
+      {
+        key: "sp_act_flash",
+        label: "SP Activation Flash",
+        description:
+          "A barely noticeable flash effect at the sides of the highway when activating Star Power. (Not displayed in this UI)",
+      },
+      {
         key: "sp_bar_color",
         label: "SP Meter Fill",
-        description: "Color of the SP meter as it fills.",
+        description: "Color of the Star Power meter as it fills.",
       },
       {
         key: "sp_bar_elec",
@@ -374,29 +385,18 @@ export const OTHER_LAYOUT = [
         key: "sp_bar_arrow",
         label: "SP Meter Glows",
         description:
-          "Color of the small glow effects of the SP meter as it fills.",
+          "Color of the small top and bottom glow effects of the SP meter.",
       },
-      {
-        key: "sp_act_animation",
-        label: "SP Highway Glow",
-        description: "Color of the highway background glow while SP is active.",
-      },
-      {
-        key: "sp_act_flash",
-        label: "SP Activation Flash",
-        description:
-          "Color of the glowing sides of the highway when SP just activates.",
-      },
-      {
-        key: "general_sp",
-        label: "General SP (Unknown)",
-        description: "Exact effect unknown.",
-      },
-      {
-        key: "general_sp_active",
-        label: "General SP Active (Unknown)",
-        description: "Exact effect unknown.",
-      },
+      // {
+      //   key: "general_sp",
+      //   label: "General SP (Unknown)",
+      //   description: "Exact effect unknown.",
+      // },
+      // {
+      //   key: "general_sp_active",
+      //   label: "General SP Active (Unknown)",
+      //   description: "Exact effect unknown.",
+      // },
     ],
   },
 ];

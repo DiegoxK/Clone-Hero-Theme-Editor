@@ -71,7 +71,7 @@ const Multiplier = () => {
       />
 
       {levelData.numberSprite && (
-        <div className="absolute right-[33.1%] bottom-[34.8%] aspect-[48/56] w-[2.2cqw]">
+        <div className="absolute right-[33%] bottom-[34.5%] aspect-[48/56] w-[2.4cqw]">
           <img
             src={levelData.glowSprite}
             alt=""

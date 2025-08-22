@@ -23,7 +23,7 @@ export default function Sidebar() {
         <TabsList className="w-full">
           <TabsTrigger value="guitar">Guitar</TabsTrigger>
           <TabsTrigger value="drums">Drums</TabsTrigger>
-          <TabsTrigger value="others">Others</TabsTrigger>
+          <TabsTrigger value="others">Effects</TabsTrigger>
         </TabsList>
         <Separator className="bg-border my-1" />
         <TabsContent
