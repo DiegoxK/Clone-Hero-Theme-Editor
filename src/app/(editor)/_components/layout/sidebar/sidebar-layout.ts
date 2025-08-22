@@ -252,7 +252,7 @@ export const GUITAR_LAYOUT = [
       },
       {
         key: "sustain_sp_phrase",
-        label: "Whammy Sustain (In Game)",
+        label: "Phrase Whammy",
         description:
           "Trail color of a phrase note when using the whammy bar. (Not visible in the current UI)",
       },
@@ -334,6 +334,17 @@ export const OTHER_LAYOUT = [
         label: "Sustain Spark",
         description: "Color of the spark animation while holding a sustain.",
       },
+      // {
+      //   key: "striker_hit_flame_kick",
+      //   label: "Drum Kick Flame",
+      //   description:
+      //     "Color of the effect from hitting a drum kick note. Effect unconfirmed.",
+      // },
+    ],
+  },
+  {
+    groupName: "Star Power Meter & Effects",
+    colors: [
       {
         key: "striker_hit_flame_sp_active",
         label: "SP Hit Flame",
@@ -349,17 +360,6 @@ export const OTHER_LAYOUT = [
         label: "SP Sustain Spark",
         description: "Color of sustain sparks when Star Power is active.",
       },
-      // {
-      //   key: "striker_hit_flame_kick",
-      //   label: "Drum Kick Flame",
-      //   description:
-      //     "Color of the effect from hitting a drum kick note. Effect unconfirmed.",
-      // },
-    ],
-  },
-  {
-    groupName: "Star Power Meter & Effects",
-    colors: [
       {
         key: "sp_act_animation",
         label: "SP Highway Glow",
