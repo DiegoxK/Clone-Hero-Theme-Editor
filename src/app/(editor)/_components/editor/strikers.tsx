@@ -303,11 +303,11 @@ const StrikerOpen = ({
               backgroundColor: starPower
                 ? otherColors.striker_hit_flame_sp_active
                 : otherColors.striker_hit_flame,
-              ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_3.png`),
+              ...createMaskStyle(`/sprites/other/spr_hitflames_strip16_2.png`),
             }}
           />
           <img
-            src={`/sprites/other/spr_hitflames_strip16_3.png`}
+            src={`/sprites/other/spr_hitflames_strip16_2.png`}
             alt=""
             className="absolute bottom-[50%] left-[-4%] h-full w-full scale-200 opacity-55 mix-blend-darken saturate-160"
           />
