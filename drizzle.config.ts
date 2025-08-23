@@ -6,7 +6,9 @@ export default {
   schema: "./src/server/db/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    // Update for db integration
+    // url: env.DATABASE_URL,
+    url: "",
   },
   tablesFilter: ["clone-her-theme-editor_*"],
 } satisfies Config;
