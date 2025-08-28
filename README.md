@@ -2,7 +2,7 @@
 
 A modern, web-based, real-time editor for creating and modifying colors.ini theme files for Clone Hero. Built with Next.js, TypeScript, and Zustand.
 
-<img width="1360" height="688" alt="screenshot" src="https://github.com/user-attachments/assets/659af5a5-3c53-4c29-9166-e11b347591ea" />
+<img width="1360" height="768" alt="{B8A485AF-6398-4F6F-ACF7-CFF870809F57}" src="https://github.com/user-attachments/assets/b0f101fd-38e4-43c6-827b-455e8eb69d77" />
 
 ## ✨ Key Features
 
@@ -110,3 +110,4 @@ This project was heavily inspired by the original web-based color editor created
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
