@@ -1,6 +1,17 @@
 # Clone Hero Theme Editor
 
 A modern, web-based, real-time editor for creating and modifying colors.ini theme files for Clone Hero. Built with Next.js, TypeScript, and Zustand.
+    
+<div>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/>
+  <img src="https://img.shields.io/badge/Zustand-000?style=for-the-badge&logo=zustand&logoColor=white" alt="Zustand"/>
+  <img src="https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white" alt="Radix UI"/>
+</div>
+
+<br/>
 
 <img width="1360" height="768" alt="{B8A485AF-6398-4F6F-ACF7-CFF870809F57}" src="https://github.com/user-attachments/assets/b0f101fd-38e4-43c6-827b-455e8eb69d77" />
 
@@ -110,4 +121,5 @@ This project was heavily inspired by the original web-based color editor created
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+
 
